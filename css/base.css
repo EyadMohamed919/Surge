@@ -1,0 +1,20 @@
+:root {
+    --primary-red: #ff0000;
+    --glass-bg: rgba(255, 0, 0, 0.06);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+    --font-main: "Montserrat", sans-serif;
+
+    --primary-dark:#0e0000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
