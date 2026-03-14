@@ -21,7 +21,7 @@ body{
 header{
     margin: 0;
     margin-top: 0;
-    height: 700px;
+    height: 800px;
     width: 100%;
     background-image: url("banner.jpg");
     background-position: center;
@@ -56,8 +56,18 @@ nav div{
 
 nav a{
     text-decoration: none;
+    position: relative;
     color: white;
     width: fit-content;
+}
+
+#active::after{
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    bottom: -10;
+    left: 0;
 }
 
 nav img{
@@ -68,24 +78,42 @@ nav img{
 .header-bottle{
     position: absolute;
     left: 50%;
-    bottom: -20%;
-    transform: translate(-50%, 0%);
-    width: 270px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: auto;
+    aspect-ratio: 640 / 1618;
     background-size: cover;
     background-position: center;
-    background-image: url("public/surge-bottle.png");
+    background-image: url("public/low-sugar-can.png");
 }
 
 .header-bottle::after{
     content: "";
     position: absolute;
     width: 120%;
-    height: 300px;
+    height: 200px;
     background: linear-gradient(rgba(0, 0, 0, 0), black);    
     z-index: 10;
-    bottom: 15%;
+    bottom: -5%;
     transform: translate(-50%, 0%);
     left: 50%;
     /* backdrop-filter: blur(50px); */
     filter: blur(20px);
+}
+
+
+
+
+.header-slogan{
+    position: absolute;
+    left: 17%;
+    rotate: 3deg;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("public/BannerSlogan.svg");
 }
