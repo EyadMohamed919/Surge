@@ -60,6 +60,8 @@ header{
 }
 
 .quick-links{
+    display: flex;
+    flex-direction: row;
     margin: auto;
     margin-bottom: 50px;
 }
@@ -94,6 +96,74 @@ header{
 
 .header-slogan-2{
     display: none;
+}
+
+.product-title{
+    color: black;
+}
+
+.product-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    margin-inline: 20px;
+}
+
+.product-card h3{
+    font-size: 1.5rem;
+    margin: auto;
+    margin-top: 50px;
+    margin-left: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.product-card p{
+    font-size: 1rem;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 0;
+    text-align: left;
+}
+
+.product-img{
+    position: absolute;
+    left: 32%;
+    top: 35%;
+    rotate: 15deg;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+    aspect-ratio: 640 / 1618;
+    background-size: cover;
+    background-position: center;
+}
+
+#productImg1{
+    background-image: url("../public/low-sugar-can.png");
+}
+
+#productImg2{
+    background-image: url("../public/Blue\ Can.png");
+}
+
+.product-background{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+#productBackground1{
+    background-color: rgb(255, 75, 75);
+}
+
+#productBackground2{
+    background-color: rgb(75, 108, 255);
 }
 
 @media screen and (max-width: 600px) {

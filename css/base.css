@@ -18,3 +18,11 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
+
+.mt-20{
+    margin-top: 20px;
+}
+
+.mt-30{
+    margin-top: 30px;
+}
