@@ -166,6 +166,18 @@ header{
     background-color: rgb(75, 108, 255);
 }
 
+
+
+/* ABOUT */
+
+.about-section{
+    background-color: black;
+}
+.about-title{
+    color: white;
+}
+
+
 @media screen and (max-width: 600px) {
     header{
         height: 95vh;
@@ -217,5 +229,23 @@ header{
         filter: blur(7px);
         height: 90%;
         background-color: rgb(29, 32, 43);
+    }
+
+    .product-card{
+        width: 250px;
+        height: 450px;
+    }
+
+    .product-background{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .product-img{
+        width: 120px;
+        left: 32%;
+        top: 31%;
+
     }
 }
