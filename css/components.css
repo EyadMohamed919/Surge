@@ -107,8 +107,6 @@ h2{
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    margin: auto;
-    margin-top: 50px;
 }
 
 .left-text-container{
@@ -154,6 +152,13 @@ h2{
 
     .horizontal-container{
         flex-direction: column;
+        height: fit-content;
+    }
+
+    .left-text-container{
+        width: 90%;
+        font-size: 1.4rem;
+        height: fit-content;
     }
 }
 

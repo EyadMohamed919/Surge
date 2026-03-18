@@ -152,6 +152,10 @@ header{
     background-image: url("../public/Blue\ Can.png");
 }
 
+#productImg3{
+    background-image: url("../public/ClassicBlackCan.png");
+}   
+
 .product-background{
     width: 400px;
     height: 400px;
@@ -165,6 +169,12 @@ header{
 #productBackground2{
     background-color: rgb(75, 108, 255);
 }
+
+#productBackground3{
+    background-color: rgb(125, 125, 125);
+}
+
+
 
 
 
@@ -186,6 +196,7 @@ header{
     object-fit: cover; /* This prevents stretching/distortion */
     display: block;
     border-radius: 20px;
+    margin: auto;
 }
 
 .about-image{
@@ -269,5 +280,22 @@ header{
         left: 32%;
         top: 31%;
 
+    }
+
+    .about-video{
+        width: 90%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    .about-image{
+        width: 120px;
+        height: fit-content;
+        left: 9%;
+        top: 86%;
+        padding: 20px;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
     }
 }

@@ -19,6 +19,10 @@ body {
     overflow-x: hidden;
 }
 
+.m-auto{
+    margin: auto;
+}
+
 .mt-20{
     margin-top: 20px;
 }
@@ -27,6 +31,24 @@ body {
     margin-top: 30px;
 }
 
+.mt-100{
+    margin-top: 100px;
+}
+
+.mt-50{
+    margin-top: 50px;
+}
+
 .h-500{
     height: 500px;
+}
+
+.w-80-percent{
+    width: 80%;
+}
+
+@media screen and (max-width: 600px) {
+    .w-90-percent-mobile{
+        width: 90%;
+    }
 }
