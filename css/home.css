@@ -43,6 +43,7 @@ header{
     background-size: cover;
     background-position: center;
     background-image: url("../public/low-sugar-can.png");
+    z-index: 10;
 }
 
 .header-bottle::after{
@@ -59,6 +60,27 @@ header{
     filter: blur(20px);
 }
 
+#bottle1{
+    background-image: url("../public/ClassicBlackCan.png");
+}
+
+#bottle2{
+    background-image: url("../public/Blue\ Can.png");
+    z-index: 9;
+    left: 58%;
+    top: 48%;
+    width: 160px;
+}
+
+#bottle3{
+    background-image: url("../public/low-sugar-can.png");
+    
+    z-index: 9;
+    left: 42%;
+    top: 48%;
+    width: 160px;
+}
+
 .quick-links{
     display: flex;
     flex-direction: row;
@@ -71,8 +93,8 @@ header{
 .header-slogan{
     position: absolute;
     left: 17%;
-    rotate: 3deg;
-    top: 45%;
+    rotate: 0deg;
+    top: 42%;
     transform: translate(-50%, -50%);
     width: 500px;
     height: 250px;
@@ -84,14 +106,14 @@ header{
 .header-slogan-1{
     position: absolute;
     right: 2%;
-    rotate: -2deg;
-    top: 40%;
+    rotate: 0deg;
+    top: 42%;
     transform: translate(0%, -50%);
-    width: 520px;
-    height: 340px;
+    width: 505px;
+    height: 230px;
     background-size: cover;
     background-position: center;
-    background-image: url("../public/BannerSlogan1.svg");
+    background-image: url("../public/BannerSlogan1_1.svg");
 }
 
 .header-slogan-2{
@@ -181,7 +203,7 @@ header{
 /* ABOUT */
 
 .about-section{
-    background-color: black;
+    background-color: rgb(150, 0, 0);
     position: relative;
 
 
@@ -205,7 +227,7 @@ header{
     height: fit-content;
     left: 49%;
     top: 70%;
-    background-color: black;
+    background-color: rgb(150, 0, 0);
     padding: 30px;
     border-top-right-radius: 20px;
 }
@@ -219,6 +241,17 @@ header{
     .header-bottle{
         width: 110px;
         top: 53%;
+    }
+
+    #bottle2{
+        width: 100px;
+        top: 51%;
+        left: 70%;
+    }
+    #bottle3{
+        width: 100px;
+        top: 51.1%;
+        left: 30%;
     }
 
     .header-bottle::after{

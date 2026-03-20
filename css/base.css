@@ -19,6 +19,12 @@ body {
     overflow-x: hidden;
 }
 
+footer{
+    height: 200px;
+    background-color: black;
+    width: 100%;
+}
+
 .m-auto{
     margin: auto;
 }
@@ -37,6 +43,14 @@ body {
 
 .mt-50{
     margin-top: 50px;
+}
+
+.mt-40{
+    margin-top: 40px;
+}
+
+.mb-40{
+    margin-bottom: 40px;
 }
 
 .h-500{
