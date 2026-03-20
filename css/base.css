@@ -23,6 +23,22 @@ footer{
     height: 200px;
     background-color: black;
     width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+footer img{
+    width: 10%;
+    margin-right: 100px;
+}
+
+footer div{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .m-auto{
@@ -64,5 +80,35 @@ footer{
 @media screen and (max-width: 600px) {
     .w-90-percent-mobile{
         width: 90%;
+    }
+
+    footer{
+        height: fit-content;
+        background-color: black;
+        width: 100%;
+        padding: 30px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    footer img{
+        width: 60%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    
+    footer div{
+        width: 40%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer .nav-link{
+        display: flex;
     }
 }
