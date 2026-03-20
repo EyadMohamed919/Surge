@@ -23,7 +23,7 @@ header{
     flex-direction: column;
     height: 800px;
     width: 100%;
-    background-image: url("../Public/banner.jpg");
+    background-image: url("../public/banner.jpg");
     background-position: center;
     background-size: cover;
     padding-top: 20px;
