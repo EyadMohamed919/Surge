@@ -232,6 +232,33 @@ header{
     border-top-right-radius: 20px;
 }
 
+@media screen and (max-width: 1300px) {
+    header{
+        height: 700px;
+    }
+
+    .header-bottle{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 160px;
+        height: auto;
+    }
+
+    #bottle2, #bottle3{
+        width: 140px;
+    }
+
+    .header-slogan{
+        width: 400px;
+        height: 180px;
+    }
+
+    .header-slogan-1{
+        width: 400px;
+        height: 180px;
+    }
+}
 
 @media screen and (max-width: 600px) {
     header{

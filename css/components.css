@@ -283,6 +283,18 @@ h2{
     margin-right: 0;
 }
 
+@media screen and (max-width: 1300px) {
+    .main-nav{
+        width: 70%;
+        margin: 10px auto;
+        padding: 15px 30px;
+    }
+
+    .glass-panel{
+        border-radius: 15px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .nav-link{
         display: none;
