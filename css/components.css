@@ -283,6 +283,58 @@ h2{
     margin-right: 0;
 }
 
+
+
+
+
+
+
+
+/* SUBPAGES */
+@font-face {
+    font-family: "Spantaran"; /* This is the name you decide to use */
+    src: url("../racing-energy-font/RacingEnergy-E44Kn.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sub-page-header{
+    position: relative;
+    background-image: url("../public/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    height: 350px;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+
+.sub-page-header::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(red, black);
+    opacity: 0.4;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.sub-page-header h1{
+    font-family: "Spantaran", sans-serif;
+    font-size: 2.5rem;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 @media screen and (max-width: 1300px) {
     .main-nav{
         width: 70%;
