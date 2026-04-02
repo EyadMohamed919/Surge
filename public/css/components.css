@@ -293,14 +293,14 @@ h2{
 /* SUBPAGES */
 @font-face {
     font-family: "Spantaran"; /* This is the name you decide to use */
-    src: url("../racing-energy-font/RacingEnergy-E44Kn.otf") format("truetype");
+    src: url("../font/racing-energy-font/RacingEnergy-E44Kn.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 .sub-page-header{
     position: relative;
-    background-image: url("../public/banner.jpg");
+    background-image: url("../image/banner.jpg");
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(10px);

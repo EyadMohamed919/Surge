@@ -24,15 +24,15 @@
 }
 
 #image1{
-    background-image: url("../public/low-sugar-can.png");
+    background-image: url("../image/low-sugar-can.png");
 }
 
 #image2{
-    background-image: url("../public/Blue\ Can.png");
+    background-image: url("../image/Blue\ Can.png");
 }
 
 #image3{
-    background-image: url("../public/ClassicBlackCan.png");
+    background-image: url("../image/ClassicBlackCan.png");
 }
 
 .product-details{

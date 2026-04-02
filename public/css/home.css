@@ -23,7 +23,7 @@ header{
     flex-direction: column;
     height: 800px;
     width: 100%;
-    background-image: url("../public/banner.jpg");
+    background-image: url("../image/banner.jpg");
     background-position: center;
     background-size: cover;
     padding-top: 20px;
@@ -42,7 +42,7 @@ header{
     aspect-ratio: 640 / 1618;
     background-size: cover;
     background-position: center;
-    background-image: url("../public/low-sugar-can.png");
+    background-image: url("../image/low-sugar-can.png");
     z-index: 10;
 }
 
@@ -61,11 +61,11 @@ header{
 }
 
 #bottle1{
-    background-image: url("../public/ClassicBlackCan.png");
+    background-image: url("../image/ClassicBlackCan.png");
 }
 
 #bottle2{
-    background-image: url("../public/Blue\ Can.png");
+    background-image: url("../image/Blue\ Can.png");
     z-index: 9;
     left: 58%;
     top: 48%;
@@ -73,7 +73,7 @@ header{
 }
 
 #bottle3{
-    background-image: url("../public/low-sugar-can.png");
+    background-image: url("../image/low-sugar-can.png");
     
     z-index: 9;
     left: 42%;
@@ -100,7 +100,7 @@ header{
     height: 250px;
     background-size: cover;
     background-position: center;
-    background-image: url("../public/BannerSlogan.svg");
+    background-image: url("../image/BannerSlogan.svg");
 }
 
 .header-slogan-1{
@@ -113,7 +113,7 @@ header{
     height: 230px;
     background-size: cover;
     background-position: center;
-    background-image: url("../public/BannerSlogan1_1.svg");
+    background-image: url("../image/BannerSlogan1_1.svg");
 }
 
 .header-slogan-2{
@@ -167,15 +167,15 @@ header{
 }
 
 #productImg1{
-    background-image: url("../public/low-sugar-can.png");
+    background-image: url("../image/low-sugar-can.png");
 }
 
 #productImg2{
-    background-image: url("../public/Blue\ Can.png");
+    background-image: url("../image/Blue\ Can.png");
 }
 
 #productImg3{
-    background-image: url("../public/ClassicBlackCan.png");
+    background-image: url("../image/ClassicBlackCan.png");
 }   
 
 .product-background{
@@ -306,7 +306,7 @@ header{
         height: 100px;
         background-size: cover;
         background-position: center;
-        background-image: url("../public/BannerSlogan2.svg");
+        background-image: url("../image/BannerSlogan2.svg");
         overflow: hidden;
     }
 
