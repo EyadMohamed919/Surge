@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "Spantaran"; /* This is the name you decide to use */
+    src: url("../font/racing-energy-font/RacingEnergy-E44Kn.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.form-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: 0;
+    padding-bottom: 50px;
+}
+
+.form-section p{
+    position: relative;
+    font-size: 1.3rem;
+    width: 60%;
+    text-align: center;
+    color: white;
+}
+
+.form-description{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 40px;
+    margin-top: 0;
+    height: auto;
+    padding-block: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(90deg, red, rgb(161, 0, 0));
+}
+
+form{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 20px;
+    width: 40%;
+    height: 800px;
+    background: linear-gradient(90deg, black, rgb(41, 41, 41));
+    margin: auto;
+    margin-right: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+}
+
+form h2{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: white;
+}
+
+.form-group{
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label{
+    color: white;
+    position: absolute;
+    top: -12;
+    left: 15;
+    background-color: white;
+    padding: 2px;
+    padding-inline: 5px;
+    border-radius: 4px;
+    color: black;
+}
+form input{
+    font-size: 1.4rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81));
+    border: white solid 1px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    padding-top: 20px;
+}
+
+form textarea{
+    font-size: 1.4rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81));
+    border: white solid 1px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    padding-top: 20px;
+}
+
+form button{
+    width: 80%;
+    padding-block: 15px;
+    font-size: 1.3rem;
+    border-radius: 7px;
+    color: white;
+    border: 1px rgba(255, 255, 255, 0.443) solid;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+}
+
+form button:hover{
+    border: 1px rgba(255, 255, 255, 1) solid;
+    background-color: rgba(255, 100, 100, 0.3);
+    cursor: pointer;
+}
+
+form textarea::placeholder, input::placeholder{
+    color: rgba(255, 255, 255, 0.626);
+}
+
+.form-divider .form-group{
+    overflow-y:visible;
+    width: 49%;
+}
+
+.form-divider{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form-image{
+    width: 55%;
+    height: 800px;
+    margin: auto;
+    margin-left: 0;
+    background-image: url("../image/truck.jpg");
+    background-position: center;
+    background-size: cover;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

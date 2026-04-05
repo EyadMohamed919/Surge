@@ -93,6 +93,10 @@ footer div{
     width: 80%;
 }
 
+.w-100-percent{
+    width: 100%;
+}
+
 .left-border-radius-40{
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
