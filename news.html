@@ -1,0 +1,152 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/news.css">
+    <link rel="stylesheet" href="public/css/components.css">
+    <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
+    <title>SURGE | News</title>
+</head>
+<body>
+    <section class="sub-page-header">
+        <nav class="main-nav glass-panel">
+            <div class="links-container">
+                <a href="index.html" class="nav-link ">Home</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="news.html" class="nav-link">News</a>
+            </div>
+
+            <img src="public/image/Surge Main Logo.svg" alt="">
+
+            <div>
+                <a href="distribute.html" class="nav-link">Distribute</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+
+            <button class="burger-menu" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <h1>News</h1>
+    </section>
+
+    <!-- Sidemenu -->
+    <nav id="side-menu" class="side-menu">
+        <!-- <button class="close-btn" onclick="toggleMenu()"><i class="fa-regular fa-circle-xmark"></i></button> -->
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="distribute.html">Distribute</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <section class="news-section">
+        <h2 class="news-title">News & Activites</h2>
+        <p>Check out the latest events and activites</p>
+        <div class="scrollable-container">
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
+
+                </div>
+                <div class="news-info">
+                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
+                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
+                        expansion into the Egyptian market, bringing its premium line 
+                        of energy beverages to the heart of North Africa. As a brand 
+                        dedicated to redefining energy by fueling both the body and mind, 
+                        SURGE is introducing..</p>
+                </div>
+
+                <div class="news-quick">
+                    <p>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        12-10-2025
+                    </p>
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
+
+                </div>
+                <div class="news-info">
+                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
+                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
+                        expansion into the Egyptian market, bringing its premium line 
+                        of energy beverages to the heart of North Africa. As a brand 
+                        dedicated to redefining energy by fueling both the body and mind, 
+                        SURGE is introducing..</p>
+                </div>
+
+                <div class="news-quick">
+                    <p>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        12-10-2025
+                    </p>
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
+
+                </div>
+                <div class="news-info">
+                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
+                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
+                        expansion into the Egyptian market, bringing its premium line 
+                        of energy beverages to the heart of North Africa. As a brand 
+                        dedicated to redefining energy by fueling both the body and mind, 
+                        SURGE is introducing..</p>
+                </div>
+
+                <div class="news-quick">
+                    <p>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        12-10-2025
+                    </p>
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <img src="public/image/Surge Main Logo.svg" alt="">
+        <div>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="products.html" class="nav-link">Products</a>
+            <a href="news.html" class="nav-link active">News</a>
+            <a href="distribute.html" class="nav-link ">Distribute</a>
+            <a href="about" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link ">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const descriptions = Array.from(document.getElementsByClassName("description"));
+        descriptions.forEach(element => {
+            if(element.innerHTML.length > 197)
+            {
+                element.innerHTML = element.innerHTML.substring(0, 197) + "...";
+            }
+        });
+
+        const titles = Array.from(document.getElementsByClassName("title"));
+        titles.forEach(element => {
+            if(element.innerHTML.length > 25)
+            {
+                element.innerHTML = element.innerHTML.substring(0, 25) + "...";
+            }
+        });
+    </script>
+</body>
+</html>
