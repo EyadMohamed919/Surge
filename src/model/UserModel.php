@@ -1,62 +1,113 @@
 <?php
+require_once __DIR__ . "/../../config/DatabaseConnection.php";
+
 class UserModel
 {
-    private $db;
-    private $fname;
-    private $lname;
-    private $email;
-    private $password;
+    private $conn;
 
-    public function __construct($dbConnection = null)
+    private $userID;
+    private $userFName;
+    private $userLName;
+    private $userEmail;
+    private $userPassword;
+
+    public function __construct()
     {
-        $this->db = $dbConnection;
+        $this->conn = getConnection();
     }
 
-    public function getFname() { return $this->fname; }
-    public function setFname($fname) { $this->fname = $fname; }
+    public function getUserID() { return $this->userID; }
+    public function getUserFName() { return $this->userFName; }
+    public function getUserLName() { return $this->userLName; }
+    public function getUserEmail() { return $this->userEmail; }
+    public function getUserPassword() { return $this->userPassword; }
 
-    public function getLname() { return $this->lname; }
-    public function setLname($lname) { $this->lname = $lname; }
-
-    public function getEmail() { return $this->email; }
-    public function setEmail($email) { $this->email = $email; }
-
-    public function getPassword() { return $this->password; }
-    public function setPassword($password) { $this->password = $password; }
+    public function createUserObject($userID, $userFName, $userLName, $userEmail, $userPassword)
+    {
+        $this->userID = $userID;
+        $this->userFName = $userFName;
+        $this->userLName = $userLName;
+        $this->userEmail = $userEmail;
+        $this->userPassword = $userPassword;
+        return $this;
+    }
 
     public function getAllUsers()
     {
-        $stmt = $this->db->prepare("SELECT * FROM users");
+        $userArray = array();
+        $stmt = $this->conn->prepare("SELECT * FROM user");
         $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_CLASS, self::class);
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $user = new UserModel();
+                $user->createUserObject(
+                    $row["id"], 
+                    $row["fname"], 
+                    $row["lname"], 
+                    $row["email"], 
+                    $row["password"]
+                );
+                $userArray[] = $user;
+            }
+        }
+        return $userArray;
     }
 
     public function getUserById($id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE id = :id");
-        $stmt->execute(['id' => $id]);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, self::class);
-        return $stmt->fetch();
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $this->createUserObject(
+                $row["id"], 
+                $row["fname"], 
+                $row["lname"], 
+                $row["email"], 
+                $row["password"]
+            );
+            return $this;
+        }
+        return 0;
     }
 
-    public function getUserByEmail($email)
+    public function getUserByEmail($email, $password)
     {
-        $stmt = $this->db->prepare("SELECT * FROM users WHERE email = :email");
-        $stmt->execute(['email' => $email]);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, self::class);
-        return $stmt->fetch();
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            if (password_verify($password, $row["password"])) {
+                
+                $this->createUserObject(
+                    $row["id"], 
+                    $row["fname"], 
+                    $row["lname"], 
+                    $row["email"], 
+                    $row["password"]
+                );
+                return $this;
+            }
+        }
+
+        return 0;
     }
 
-    public function createUser()
+    public function createUser($fname, $lname, $email, $password)
     {
-        $sql = "INSERT INTO users (fname, lname, email, password) VALUES (:fname, :lname, :email, :password)";
-        $stmt = $this->db->prepare($sql);
-        return $stmt->execute([
-            'fname'    => $this->fname,
-            'lname'    => $this->lname,
-            'email'    => $this->email,
-            'password' => password_hash($this->password, PASSWORD_BCRYPT)
-        ]);
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        $stmt = $this->conn->prepare("INSERT INTO user (fname, lname, email, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $fname, $lname, $email, $hashedPassword);
+        return $stmt->execute();
     }
 }
 ?>
