@@ -8,7 +8,17 @@ if(!isset($_SESSION['isLoggedIn']))
 }
 $FName = $_SESSION["userFName"];
 
-require_once __DIR__ . "/src/view/NewsView.php";
+require_once __DIR__ . "/src/model/NewsModel.php";
+$newModel = new NewsModel();
+if(isset($_GET["edit"]))
+{
+    $news = $newModel->getNewsById($_GET["edit"]);
+    if(!$news)
+    {
+        header("location: adminNews.php");
+    }
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,58 +50,41 @@ require_once __DIR__ . "/src/view/NewsView.php";
         <div class="header-flex">
             <div>
                 <h1>News Management</h1>
-                <p style="color: var(--text-gray);">Compose and archive SURGE news updates</p>
+                <p style="color: var(--text-gray);">Edit existing news</p>
             </div>
             <i class="fa-solid fa-circle-user fa-2xl" style="color: var(--primary-red);"></i>
         </div>
 
         <div class="form-card">
-            <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-nib"></i> Post New Article</h2>
+            <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-nib"></i> Edit Article</h2>
             
             <form action="src/router/NewsRouter.php" method="POST" enctype="multipart/form-data">
                 <div class="form-grid"> 
                     <div class="form-group">
                         <label for="title">Article Title</label>
-                        <input type="text" id="title" name="title" placeholder="e.g. New Distribution Center Opening" required>
+                        <input value="<?php echo $news->getTitle(); ?>" type="text" id="title" name="title" placeholder="e.g. New Distribution Center Opening" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Publish Date</label>
-                        <input type="date" id="date" name="date" required>
+                        <input value="<?php echo $news->getDate(); ?>" type="date" id="date" name="date" required>
                     </div>
                     <div class="form-group full-width">
                         <label for="image">Featured Picture</label>
-                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <input type="file" id="image" name="image" accept="image/*">
                     </div>
                     <div class="form-group full-width">
                         <label for="description">Short Description</label>
-                        <textarea id="description" name="description" rows="5" placeholder="Write the article content here..." required></textarea>
+                        <textarea id="description" name="description" rows="5" placeholder="Write the article content here..." required><?php echo htmlspecialchars($news->getDescription()); ?></textarea>
                     </div>
                 </div>
-                <button type="submit" name="addNews" class="publish-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Publish Article
+
+                <input type="text" name="id" value="<?php echo $news->getID(); ?>" hidden>
+                <button type="submit" name="editNews" class="publish-btn">
+                    <i class="fa-solid fa-paper-plane"></i> Update Article
                 </button>
             </form>
         </div>
 
-        <div class="history-section">
-            <div class="section-title">Published Articles History</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Preview</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    NewsView::fetchNewsTable();
-                    ?>                    
-                </tbody>
-            </table>
-        </div>
     </main>
 
 </body>

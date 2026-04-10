@@ -7,6 +7,8 @@ if(!isset($_SESSION['isLoggedIn']))
     header("location: login.php");
 }
 $FName = $_SESSION["userFName"];
+
+require_once __DIR__ . "/src/controller/NewsController.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

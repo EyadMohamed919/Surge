@@ -5,38 +5,38 @@ class NewsModel
 {
     private $conn;
 
-    private $newsID;
-    private $newsTitle;
-    private $newsDate;
-    private $newsImage;
-    private $newsDescription;
+    private $id;
+    private $title;
+    private $date;
+    private $image;
+    private $description;
 
     public function __construct()
     {
         $this->conn = getConnection();
     }
 
-    // Getters
-    public function getNewsID() { return $this->newsID; }
-    public function getNewsTitle() { return $this->newsTitle; }
-    public function getNewsDate() { return $this->newsDate; }
-    public function getNewsImage() { return $this->newsImage; }
-    public function getNewsDescription() { return $this->newsDescription; }
 
-    public function createNewsObject($newsID, $newsTitle, $newsDate, $newsImage, $newsDescription)
+    public function getID() { return $this->id; }
+    public function getTitle() { return $this->title; }
+    public function getDate() { return $this->date; }
+    public function getImage() { return $this->image; }
+    public function getDescription() { return $this->description; }
+
+    public function createNewsObject($id, $title, $date, $image, $description)
     {
-        $this->newsID = $newsID;
-        $this->newsTitle = $newsTitle;
-        $this->newsDate = $newsDate;
-        $this->newsImage = $newsImage;
-        $this->newsDescription = $newsDescription;
+        $this->id = $id;
+        $this->title = $title;
+        $this->date = $date;
+        $this->image = $image;
+        $this->description = $description;
         return $this;
     }
 
     public function getAllNews()
     {
         $newsArray = array();
-        $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY newsDate DESC");
+        $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY date DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -44,11 +44,11 @@ class NewsModel
             while ($row = $result->fetch_assoc()) {
                 $news = new NewsModel();
                 $news->createNewsObject(
-                    $row["newsID"],
-                    $row["newsTitle"],
-                    $row["newsDate"],
-                    $row["newsImage"],
-                    $row["newsDescription"]
+                    $row["id"],
+                    $row["title"],
+                    $row["date"],
+                    $row["image"],
+                    $row["description"]
                 );
                 $newsArray[] = $news;
             }
@@ -59,7 +59,7 @@ class NewsModel
     public function getFourNews()
     {
         $newsArray = array();
-        $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY newsDate DESC LIMIT 4");
+        $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY date DESC LIMIT 4");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -67,11 +67,11 @@ class NewsModel
             while ($row = $result->fetch_assoc()) {
                 $news = new NewsModel();
                 $news->createNewsObject(
-                    $row["newsID"],
-                    $row["newsTitle"],
-                    $row["newsDate"],
-                    $row["newsImage"],
-                    $row["newsDescription"]
+                    $row["id"],
+                    $row["title"],
+                    $row["date"],
+                    $row["image"],
+                    $row["description"]
                 );
                 $newsArray[] = $news;
             }
@@ -81,7 +81,7 @@ class NewsModel
 
     public function getNewsById($id)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM news WHERE newsID = ?");
+        $stmt = $this->conn->prepare("SELECT * FROM news WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -89,11 +89,11 @@ class NewsModel
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $this->createNewsObject(
-                $row["newsID"],
-                $row["newsTitle"],
-                $row["newsDate"],
-                $row["newsImage"],
-                $row["newsDescription"]
+                $row["id"],
+                $row["title"],
+                $row["date"],
+                $row["image"],
+                $row["description"]
             );
             return $this;
         }
@@ -102,21 +102,21 @@ class NewsModel
 
     public function createNews($title, $date, $image, $description)
     {
-        $stmt = $this->conn->prepare("INSERT INTO news (newsTitle, newsDate, newsImage, newsDescription) VALUES (?, ?, ?, ?)");
+        $stmt = $this->conn->prepare("INSERT INTO news (title, date, image, description) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("ssss", $title, $date, $image, $description);
         return $stmt->execute();
     }
 
     public function updateNews($id, $title, $date, $image, $description)
     {
-        $stmt = $this->conn->prepare("UPDATE news SET newsTitle = ?, newsDate = ?, newsImage = ?, newsDescription = ? WHERE newsID = ?");
+        $stmt = $this->conn->prepare("UPDATE news SET title = ?, date = ?, image = ?, description = ? WHERE id = ?");
         $stmt->bind_param("ssssi", $title, $date, $image, $description, $id);
         return $stmt->execute();
     }
 
     public function deleteNews($id)
     {
-        $stmt = $this->conn->prepare("DELETE FROM news WHERE newsID = ?");
+        $stmt = $this->conn->prepare("DELETE FROM news WHERE id = ?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }

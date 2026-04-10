@@ -18,13 +18,24 @@ class FileUploadService
             return false;
         }
 
-        $fileName = time() . "_" . basename($file["name"]);
+        $fileName = time();
         $targetPath = $this->targetDir . $fileName;
 
         if (move_uploaded_file($file["tmp_name"], $targetPath)) {
             return $fileName;
         }
 
+        return false;
+    }
+
+    public function deleteImage($fileName)
+    {
+        $filePath = $this->targetDir . $fileName;
+        
+        if (!empty($fileName) && file_exists($filePath)) {
+            return unlink($filePath);
+        }
+        
         return false;
     }
 }
