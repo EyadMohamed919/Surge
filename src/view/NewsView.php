@@ -39,5 +39,49 @@ class NewsView{
             ';
         }
     }
+
+    public static function fetchFourNews()
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->getFourNews();
+
+        foreach ($news as $news => $article) {
+            if(strlen($article->getDescription()) > 80)
+            {
+                $description = substr($article->getDescription(), 0, 77) . "...";
+            }
+            else
+            {
+                $description = $article->getDescription();
+            }
+
+            if(strlen($article->getTitle()) > 30)
+            {
+                $title = substr($article->getTitle(), 0, 27) . "...";
+            }
+            else
+            {
+                $title = $article->getTitle();
+            }
+
+            echo '
+            <div class="news-card">
+                <div class="news-image" style="background-image: url(public/uploads/news/' . $article->getImage() . ');">
+
+                </div>
+                <h4>' . $title . '</h4>
+                <p>' . $description . '</p>
+
+                <div class="news-quick">
+                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+                    <p>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        ' . $article->getDate() . '
+                    </p>
+                </div>
+            </div>
+            ';
+        }
+    }
 }
 ?>

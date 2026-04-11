@@ -1,3 +1,6 @@
+<?php 
+require_once __DIR__ . "/src/view/NewsView.php";
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -148,70 +151,7 @@
         <h2 class="news-title">News & Activites</h2>
         <p>Check out the latest events and activites</p>
         <div class="horizontal-container mt-40 mb-40">
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
-
-                </div>
-                <h4>Example Title</h4>
-                <p>This is a description</p>
-
-                <div class="news-quick">
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://surgeenergydrink.com/assets/img/surge_moment_bg.jpg');">
-
-                </div>
-                <h4>Example Title</h4>
-                <p>This is a description</p>
-
-                <div class="news-quick">
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://www.puma-catchup.com/wp-content/uploads/2024/01/PUMA-pyramids-Header.png')">
-
-                </div>
-                <h4>Example Title</h4>
-                <p>This is a description</p>
-
-                <div class="news-quick">
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://c.files.bbci.co.uk/cea1/live/1de105b0-f5a5-11ef-bcea-7b70a14a5556.jpg')">
-
-                </div>
-                <h4>Example Title</h4>
-                <p>This is a description</p>
-
-                <div class="news-quick">
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                </div>
-            </div>
-
+            <?php NewsView::fetchFourNews();  ?>
         </div>
 
         <div class="quick-links">

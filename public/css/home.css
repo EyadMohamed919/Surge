@@ -233,9 +233,9 @@ header{
 }
 
 .news-card{
-    width: 320px;
+    width: 350px;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1.1;
     border: 1px black solid;
     border-radius: 20px;
     padding: 10px;
