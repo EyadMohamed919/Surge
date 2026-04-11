@@ -73,7 +73,7 @@ class NewsView{
                 <p>' . $description . '</p>
 
                 <div class="news-quick">
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+                    <a href="article.php?id=' . $article->getID() . '"><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
                     <p>
                         <i class="fa-solid fa-calendar-days"></i>
                         ' . $article->getDate() . '
