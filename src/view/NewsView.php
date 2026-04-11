@@ -83,5 +83,35 @@ class NewsView{
             ';
         }
     }
+
+    public static function fetchTwoNewsTable()
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->getFourNews();
+
+        foreach ($news as $news => $article) {
+
+            if(strlen($article->getTitle()) > 40)
+            {
+                $title = substr($article->getTitle(), 0, 37) . "...";
+            }
+            else
+            {
+                $title = $article->getTitle();
+            }
+
+            echo '
+                <tr>
+                    <td>' . $title . '</td>
+                    <td>' . $article->getDate() . '</td>
+                    <td><span class="status-pill">Published</span></td>
+                    <td class="actions">
+                        <a href="adminEditNews.php?edit=' . $article->getID() . '"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="src/router/NewsRouter.php?delete=' . $article->getID() . '"><i class="fa-solid fa-trash"></i></a>
+                    </td>
+                </tr>
+            ';
+        }
+    }
 }
 ?>

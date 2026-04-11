@@ -8,7 +8,8 @@ if(!isset($_SESSION['isLoggedIn']))
 }
 $FName = $_SESSION["userFName"];
 
-require_once __DIR__ . "/src/controller/NewsController.php";
+require_once __DIR__ . "/src/view/NewsView.php";
+require_once __DIR__ . "/src/model/NewsModel.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +42,7 @@ require_once __DIR__ . "/src/controller/NewsController.php";
         <header class="top-bar">
             <div class="welcome-msg">
                 <h1>Welcome, <?php echo $FName; ?></h1>
-                <p>Manage your SURGe ecosystem and news updates.</p>
+                <p>Manage your SURGE ecosystem and news updates.</p>
             </div>
             <div class="user-profile">
                 <i class="fa-solid fa-circle-user fa-2xl" style="color: var(--primary-red);"></i>
@@ -66,7 +67,7 @@ require_once __DIR__ . "/src/controller/NewsController.php";
             <div class="stat-card">
                 <div class="stat-icon"><i class="fa-solid fa-file-pen"></i></div>
                 <div class="stat-info">
-                    <h3>156</h3>
+                    <h3><?php echo NewsModel::getNumberOfNews(); ?></h3>
                     <p>News Articles</p>
                 </div>
             </div>
@@ -75,7 +76,7 @@ require_once __DIR__ . "/src/controller/NewsController.php";
         <div class="data-section">
             <div class="section-header">
                 <h2>Recent News</h2>
-                <button class="btn-new"><i class="fa-solid fa-plus"></i> Add Article</button>
+                <a href="adminNews.php" class="btn-new"><i class="fa-solid fa-plus"></i> Add Article</a>
             </div>
             <table>
                 <thead>
@@ -87,24 +88,8 @@ require_once __DIR__ . "/src/controller/NewsController.php";
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Global Distribution Network Expanding</td>
-                        <td>Oct 24, 2023</td>
-                        <td><span class="status-pill">Published</span></td>
-                        <td class="actions">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash"></i>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>SURGe Partnership Summit 2024</td>
-                        <td>Oct 20, 2023</td>
-                        <td><span class="status-pill">Draft</span></td>
-                        <td class="actions">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                            <i class="fa-solid fa-trash"></i>
-                        </td>
-                    </tr>
+                
+                    <?php NewsView::fetchTwoNewsTable(); ?>
                 </tbody>
             </table>
         </div>

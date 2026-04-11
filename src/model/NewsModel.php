@@ -33,6 +33,14 @@ class NewsModel
         return $this;
     }
 
+    public static function getNumberOfNews()
+    {
+        $stmt = getConnection()->prepare("SELECT count(id) as count FROM news");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc()["count"];
+    }
+
     public function getAllNews()
     {
         $newsArray = array();
@@ -60,6 +68,29 @@ class NewsModel
     {
         $newsArray = array();
         $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY date DESC LIMIT 4");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $news = new NewsModel();
+                $news->createNewsObject(
+                    $row["id"],
+                    $row["title"],
+                    $row["date"],
+                    $row["image"],
+                    $row["description"]
+                );
+                $newsArray[] = $news;
+            }
+        }
+        return $newsArray;
+    }
+
+    public function getTwoNews()
+    {
+        $newsArray = array();
+        $stmt = $this->conn->prepare("SELECT * FROM news ORDER BY date DESC LIMIT 2");
         $stmt->execute();
         $result = $stmt->get_result();
 

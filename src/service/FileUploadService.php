@@ -18,7 +18,10 @@ class FileUploadService
             return false;
         }
 
-        $fileName = time();
+        $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
+        
+        $fileName = time() . "." . $ext;
+
         $targetPath = $this->targetDir . $fileName;
 
         if (move_uploaded_file($file["tmp_name"], $targetPath)) {
