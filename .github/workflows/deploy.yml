@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
+        
+      - name: Install Dependencies
+        run: composer install --no-dev --optimize-autoloader
 
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -26,3 +29,4 @@ jobs:
             **/GraphicDesigns/**
             *.c4d
             *.psd
+        
