@@ -85,7 +85,7 @@ form input{
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 7px;
-    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81));
+    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81, 0.3));
     border: white solid 1px;
     color: white;
     font-family: "Montserrat", sans-serif;
@@ -98,7 +98,7 @@ form textarea{
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 7px;
-    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81));
+    background: linear-gradient(90deg, rgb(41, 41, 41), rgb(255, 81, 81, 0.3));
     border: white solid 1px;
     color: white;
     font-family: "Montserrat", sans-serif;

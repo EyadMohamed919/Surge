@@ -20,21 +20,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="sidebar">
-        <div class="sidebar-brand"></div>
-        <ul class="nav-links">
-            <li><a href="dashboard.php"><i class="fa-solid fa-gauge"></i> <span>Dashboard</span></a></li>
-            <li><a href="adminNews.php" class="active"><i class="fa-solid fa-newspaper"></i> <span>News Articles</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-envelope"></i> <span>Inquiries</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-truck-ramp-box"></i> <span>Distributors</span></a></li>
-            <li><a href="#"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
-        </ul>
-        <div class="logout-area">
-            <a href="logout.php" style="color: var(--text-gray); text-decoration: none; padding-left: 1rem;">
-                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
-            </a>
-        </div>
-    </nav>
+    <?php require_once __DIR__ . "/src/view/SideAdminView.php"; ?>
 
     <main class="content">
         <div class="header-flex">
