@@ -18,10 +18,21 @@ class FileUploadService
             return false;
         }
 
-        $ext = pathinfo($file["name"], PATHINFO_EXTENSION);
+        $originalName = basename($file["name"]);
+        $ext = pathinfo($originalName, PATHINFO_EXTENSION);
+
+        if (empty($ext)) {
+            $mimeType = $file['type'];
+            $extMap = [
+                'image/jpeg' => 'jpg',
+                'image/png'  => 'png',
+                'image/webp' => 'webp',
+                'image/gif'  => 'gif'
+            ];
+            $ext = $extMap[$mimeType] ?? 'jpg';
+        }
         
         $fileName = time() . "." . $ext;
-
         $targetPath = $this->targetDir . $fileName;
 
         if (move_uploaded_file($file["tmp_name"], $targetPath)) {
