@@ -10,6 +10,8 @@ $FName = $_SESSION["userFName"];
 
 require_once __DIR__ . "/src/view/NewsView.php";
 require_once __DIR__ . "/src/model/NewsModel.php";
+require_once __DIR__ . "/src/model/DistributeModel.php";
+require_once __DIR__ . "/src/view/DistributeView.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,8 +48,8 @@ require_once __DIR__ . "/src/model/NewsModel.php";
             <div class="stat-card">
                 <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
                 <div class="stat-info">
-                    <h3>12</h3>
-                    <p>Partner Requests</p>
+                    <h3><?php echo DistributeModel::getLeadCount(); ?></h3>
+                    <p>Distribution Requests</p>
                 </div>
             </div>
             <div class="stat-card">
@@ -85,21 +87,18 @@ require_once __DIR__ . "/src/model/NewsModel.php";
                 <h2>Distribution Requests</h2>
             </div>
             <table>
-                <thead>
+            <thead>
                     <tr>
-                        <th>Company Name</th>
-                        <th>Location</th>
-                        <th>Request Type</th>
-                        <th>Status</th>
+                        <th>Company</th>
+                        <th>Contact Person</th>
+                        <th>Contact Details</th>
+                        <th>Request Date</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>LogiTech Solutions</td>
-                        <td>Berlin, DE</td>
-                        <td>Bulk Distribution</td>
-                        <td><span class="status-pill">Pending</span></td>
-                    </tr>
+                    <?php 
+                    DistributeView::fetchTwoDistributeTable();
+                    ?>
                 </tbody>
             </table>
         </div>

@@ -13,6 +13,7 @@ class DistributeModel
     private $cname;
     private $cwebsite;
     private $message;
+    private $date;
 
     public function __construct()
     {
@@ -27,8 +28,9 @@ class DistributeModel
     public function getCname() { return $this->cname; }
     public function getCwebsite() { return $this->cwebsite; }
     public function getMessage() { return $this->message; }
+    public function getDate() { return $this->date; }
 
-    public function createLeadObject($id, $fname, $lname, $email, $phone, $cname, $cwebsite, $message)
+    public function createLeadObject($id, $fname, $lname, $email, $phone, $cname, $cwebsite, $message, $date)
     {
         $this->id = $id;
         $this->fname = $fname;
@@ -38,7 +40,17 @@ class DistributeModel
         $this->cname = $cname;
         $this->cwebsite = $cwebsite;
         $this->message = $message;
+        $this->date = $date;
         return $this;
+    }
+
+    public static function getLeadCount()
+    {
+        $stmt = getConnection()->prepare("SELECT count(id) as count FROM leads");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc()["count"];
     }
 
     public function getAllLeads()
@@ -58,10 +70,63 @@ class DistributeModel
                 $row["phone"],
                 $row["cname"],
                 $row["cwebsite"],
-                $row["message"]
+                $row["message"],
+                $row["created_at"]
             );
         }
         return $leads;
+    }
+
+    public function getTwoLeads()
+    {
+        $leads = array();
+        $stmt = $this->conn->prepare("SELECT * FROM leads ORDER BY id DESC LIMIT 2");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        while ($row = $result->fetch_assoc()) {
+            $lead = new DistributeModel();
+            $leads[] = $lead->createLeadObject(
+                $row["id"],
+                $row["fname"],
+                $row["lname"],
+                $row["email"],
+                $row["phone"],
+                $row["cname"],
+                $row["cwebsite"],
+                $row["message"],
+                $row["created_at"]
+            );
+        }
+        return $leads;
+    }
+
+    public function getLeadByID($id)
+    {
+        $leads = array();
+        $stmt = $this->conn->prepare("SELECT * FROM leads WHERE id = ? ");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result->num_rows > 0)
+        {
+            $row = $result->fetch_assoc(); 
+            $lead = $this->createLeadObject(
+                $row["id"],
+                $row["fname"],
+                $row["lname"],
+                $row["email"],
+                $row["phone"],
+                $row["cname"],
+                $row["cwebsite"],
+                $row["message"],
+                $row["created_at"]
+            );
+
+            return $lead;
+        }
+
+        return 0;
     }
 
     public function createLead($fname, $lname, $email, $phone, $cname, $cwebsite, $message)

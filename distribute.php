@@ -65,43 +65,43 @@
             <div class="form-image">
     
             </div>
-            <form action="">
+            <form action="src/router/DistributeRouter.php" method="post">
                 <h2>Distribute with Us</h2>
                 <div class="form-divider">
                     <div class="form-group">
-                        <input type="text" name="fname" placeholder="First Name">
+                        <input type="text" name="fname" placeholder="First Name" required>
                         <label for="fname">First Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="lname" placeholder="Last Name">
+                        <input type="text" name="lname" placeholder="Last Name" required>
                         <label for="lname">Last Name</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" placeholder="Email">
+                    <input type="email" name="email" placeholder="Email" required>
                     <label for="email">Email</label>
                 </div>
                 <div class="form-group">
-                    <input type="phone" name="phone" placeholder="Phone">
+                    <input type="phone" name="phone" placeholder="Phone" required>
                     <label for="phone">Phone</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" name="cname" placeholder="Company Name">
+                    <input type="text" name="cname" placeholder="Company Name" required>
                     <label for="cname">Company Name</label>
                 </div>
 
                 <div class="form-group">
-                    <input type="url" name="cname" placeholder="example.com">
+                    <input type="url" name="cwebsite" placeholder="example.com" required>
                     <label for="cwebsite">Company Website</label>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="" id="" cols="30" rows="3" placeholder="Message"></textarea>
+                    <textarea name="message" id="" cols="30" rows="3" placeholder="Message" required></textarea>
                 </div>
 
-                <button>Submit</button>
+                <button name="addDistribute">Submit</button>
             </form>
         </div>
     </section>

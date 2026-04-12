@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../models/DistributeModel.php";
+require_once __DIR__ . "/../model/DistributeModel.php";
 
 class DistributeController
 {
@@ -15,5 +15,26 @@ class DistributeController
             header("Location: ../../distribute.php?status=error");
         }
         exit();
+    }
+
+    public static function deleteApplication($id)
+    {
+        $leadModel = new DistributeModel();
+        $lead = $leadModel->getLeadByID($id);
+        if($lead)
+        {
+            if($leadModel->deleteLead($id))
+            {
+                header("Location: ../../adminDistribute.php?status=success");
+            }
+            else
+            {
+                header("Location: ../../adminDistribute.php?status=error");
+            }
+        }
+        else
+        {
+            header("Location: ../../adminDistribute.php?status=error");
+        }
     }
 }

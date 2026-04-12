@@ -1,3 +1,6 @@
+<?php 
+require_once __DIR__ . "/src/view/DistributeView.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,29 +40,15 @@
                         <th>Contact Person</th>
                         <th>Contact Details</th>
                         <th>Message</th>
-                        <th>Status</th>
+                        <th>Request Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <span class="company-name">Nexus Logistics</span>
-                            <a href="https://nexus-example.com" class="website-link" target="_blank">nexus-example.com</a>
-                        </td>
-                        <td>John Doe</td>
-                        <td>
-                            <div class="contact-info"><i class="fa-solid fa-envelope"></i> j.doe@nexus.com</div>
-                            <div class="contact-info"><i class="fa-solid fa-phone"></i> +1 555-0123</div>
-                        </td>
-                        <td><div class="message-preview">Interested in regional distribution for the West coast...</div></td>
-                        <td><span class="status-badge">New</span></td>
-                        <td>
-                            <button class="action-btn" title="View Full Message"><i class="fa-solid fa-eye"></i></button>
-                            <button class="action-btn" title="Delete"><i class="fa-solid fa-trash"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
+                    <?php 
+                    DistributeView::fetchDistributeTable();
+                    ?>
+                </tbody>
             </table>
         </div>
     </main>
