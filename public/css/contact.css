@@ -162,7 +162,7 @@ hr{
     height: 2px;
     width: 100%;
     margin: auto;
-    margin-top: 10;
+    margin-top: 10px;
     background-color: rgba(255, 0, 0, 0.176);
     border: none;
     border-radius: 3px;
@@ -249,7 +249,24 @@ form textarea::placeholder, input::placeholder{
 }
 
 @media screen and (max-width: 600px){
-    
+    .contact-section{
+        height: fit-content;
+    }
+    .contact-container{
+        flex-direction: column;
+        height: fit-content;
+    }
+    hr{
+        margin-bottom: 20px;
+    }
+    .contact-box{
+        width: 95%;
+    }
+    .contact-card{
+        width: 100%;
+        border-radius: 15px;
+        margin-top: 10px;
+    }
     .form-image{
         margin: auto;
         width: 95%;
@@ -290,5 +307,16 @@ form textarea::placeholder, input::placeholder{
     #mobile{
         display: flex;
         width: 80%;
+    }
+
+    #hours{
+        width: 95%;
+    }
+
+    .sub-page-header h1{
+        font-size: 1.5rem;
+        width: 100%;
+        margin: auto;
+        text-align: center;
     }
 }
