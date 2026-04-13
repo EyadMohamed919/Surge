@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="public/css/about.css">
     <link rel="stylesheet" href="public/css/components.css">
     <link rel="stylesheet" href="public/css/base.css">
+    <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
     <title>SURGE Egypt</title>
 </head>
 <body>
@@ -17,6 +18,8 @@
 
     <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
 
+    <div id="overlay" onclick="toggleMenu()"></div>
+    <script src="public/scripts/sidemenu.js"></script>
     <div class="page-wrapper">
         
         <div class="story-container">
@@ -34,7 +37,7 @@
                 </p>
             </div>
             <div class="image-column">
-                <img src="public/image/truck.jpg" alt="Surge Energy Drink" class="story-image">
+                <div class="story-image"></div>
             </div>
         </div>
 
@@ -57,6 +60,7 @@
 
     </div>
 
+    
     <footer>
         <img src="public/image/Surge Main Logo.svg" alt="">
         <div>
@@ -68,6 +72,5 @@
             <a href="contact.html" class="nav-link">Contact</a>
         </div>
     </footer>
-
 </body>
 </html>

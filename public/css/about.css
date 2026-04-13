@@ -59,6 +59,9 @@
     object-fit: cover;
     border-radius: 8px;
     border-left: 10px solid #ff0000;
+    background:url("../image/drifting_car.png");
+    background-position: center;
+    background-size: cover;
 }
 
 .section-label {

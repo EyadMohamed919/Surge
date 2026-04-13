@@ -102,7 +102,6 @@
         </div>
     </footer>
 
-    <script src="public/scripts/video.js"></script>
     <script src="public/scripts/sidemenu.js"></script>
 </body>
 </html>
