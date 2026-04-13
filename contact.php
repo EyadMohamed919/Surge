@@ -12,39 +12,11 @@
 </head>
 <body>
     <section class="sub-page-header">
-        <nav class="main-nav glass-panel">
-            <div class="links-container">
-                <a href="index.html" class="nav-link ">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
-                <a href="news.html" class="nav-link">News</a>
-            </div>
-
-            <img src="public/image/Surge Main Logo.svg" alt="">
-
-            <div>
-                <a href="distribute.html" class="nav-link">Distribute</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-
-            <button class="burger-menu" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-
+        <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
         <h1>Contact Us</h1>
     </section>
 
-    <!-- Sidemenu -->
-    <nav id="side-menu" class="side-menu">
-        <!-- <button class="close-btn" onclick="toggleMenu()"><i class="fa-regular fa-circle-xmark"></i></button> -->
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="distribute.html">Distribute</a>
-        <a href="#">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">About</a>
-    </nav>
+    <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
       
     <div id="overlay" onclick="toggleMenu()"></div>
 
@@ -58,13 +30,13 @@
         </div>
 
         <div class="contact-container">
-            <form action="">
+            <form action="src/router/ContactRouter.php" method="post">
                 <h2>Get In Touch</h2>
                 <hr>
                 <div class="form-divider">
                     <div class="form-group">
-                        <input type="text" name="fname" placeholder="First Name">
-                        <label for="fname">First Name</label>
+                        <input type="text" name="name" placeholder="Full Name">
+                        <label for="name">Full Name</label>
                     </div>
                     <div class="form-group">
                         <input type="text" name="email" placeholder="Email">
@@ -79,10 +51,10 @@
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea name="" id="" cols="30" rows="3" placeholder="Message"></textarea>
+                    <textarea name="message" id="" cols="30" rows="3" placeholder="Message"></textarea>
                 </div>
 
-                <button>Submit</button>
+                <button name="addContact">Submit</button>
             </form>
 
             <div class="contact-box">

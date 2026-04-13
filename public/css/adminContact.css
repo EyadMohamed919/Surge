@@ -1,0 +1,99 @@
+:root {
+    --primary-red: #dc143c;
+    --bg-black: #0a0a0a;
+    --card-bg: #141414;
+    --text-gray: #bcbcbc;
+    --sidebar-width: 260px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: var(--bg-black); color: white; display: flex; }
+
+/* Sidebar Navigation */
+nav.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #000;
+    border-right: 1px solid rgba(220, 20, 60, 0.2);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+}
+
+.sidebar-brand {
+    background-image: url("../image/Surge\ Main\ Logo.svg");
+    width: 70%;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+    aspect-ratio: 1.8/0.5;
+}
+
+.sidebar-brand { padding: 0 1.5rem 2rem; font-size: 1.5rem; font-weight: 800; color: var(--primary-red); letter-spacing: 2px; text-align: center; }
+.nav-links { list-style: none; flex-grow: 1; }
+.nav-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 1.5rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(220, 20, 60, 0.1);
+    color: white;
+    border-left: 4px solid var(--primary-red);
+}
+
+/* Main Content */
+main.content {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 2rem;
+}
+
+.header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+
+/* Inquiry Table */
+.inquiry-card {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    border: 1px solid #222;
+    overflow: hidden;
+}
+
+.table-header { padding: 1.5rem; border-bottom: 1px solid #222; }
+
+table { width: 100%; border-collapse: collapse; }
+th { background: #1a1a1a; color: var(--text-gray); text-align: left; padding: 1.2rem; font-size: 0.8rem; text-transform: uppercase; }
+td { padding: 1.2rem; border-bottom: 1px solid #222; font-size: 0.9rem; vertical-align: top; }
+
+.sender-name { font-weight: 700; color: white; display: block; margin-bottom: 4px; }
+.sender-email { color: var(--primary-red); font-size: 0.8rem; text-decoration: none; }
+.sender-phone { display: block; font-size: 0.8rem; color: var(--text-gray); margin-top: 4px; }
+
+.message-text { color: var(--text-gray); line-height: 1.5; max-width: 400px; }
+
+.action-group { display: flex; gap: 10px; }
+.btn-icon {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--text-gray);
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-icon:hover { 
+    background: rgba(220, 20, 60, 0.1); 
+    color: var(--primary-red); 
+    border-color: var(--primary-red);
+}
+
+.timestamp { font-size: 0.75rem; color: #555; }

@@ -1,4 +1,13 @@
 <?php 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['isLoggedIn']))
+{
+    header("location: login.php");
+}
+$FName = $_SESSION["userFName"];
+
 require_once __DIR__ . "/src/view/DistributeView.php";
 ?>
 <!DOCTYPE html>
