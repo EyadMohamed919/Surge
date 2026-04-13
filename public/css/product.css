@@ -230,3 +230,42 @@ color: #f0f0f0;
 border-top: 1px solid rgba(255, 255, 255, 0.2);
 padding-top: 10px;
 }
+
+@media screen and (max-width: 600px) {
+    .product-section{
+    }
+
+    .info-section{
+    }
+    
+    .info-container{
+        flex-direction: column;
+    }
+
+    .info-box, .faq-container{
+        width: 100%;
+    }
+
+    .product-container{
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .product-details
+    {
+        width: 100%;
+    }
+
+    .product-img{
+        width: 70%;
+        height: auto;
+        aspect-ratio: 1/2.55;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .product-details p{
+        width: 100%;
+        white-space: normal;
+    }
+}
