@@ -10,6 +10,7 @@ $FName = $_SESSION["userFName"];
 
 require_once __DIR__ . "/src/view/NewsView.php";
 require_once __DIR__ . "/src/model/NewsModel.php";
+require_once __DIR__ . "/src/model/ContactModel.php";
 require_once __DIR__ . "/src/model/DistributeModel.php";
 require_once __DIR__ . "/src/view/DistributeView.php";
 ?>
@@ -41,7 +42,7 @@ require_once __DIR__ . "/src/view/DistributeView.php";
             <div class="stat-card">
                 <div class="stat-icon"><i class="fa-solid fa-paper-plane"></i></div>
                 <div class="stat-info">
-                    <h3>24</h3>
+                    <h3><?php echo ContactModel::getContactCount(); ?></h3>
                     <p>New Inquiries</p>
                 </div>
             </div>

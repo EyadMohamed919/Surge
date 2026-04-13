@@ -22,6 +22,15 @@ class ContactModel {
         $this->conn = getConnection();
     }
 
+    public static function getContactCount()
+    {
+        $stmt = getConnection()->prepare("SELECT count(id) as count FROM contact");
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        return $result->fetch_assoc()["count"];
+    }
+
     public function createContactObject($id, $fname, $email, $phone, $message, $date) {
         $this->id = $id;
         $this->fname = $fname;
