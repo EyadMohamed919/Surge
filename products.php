@@ -15,16 +15,7 @@
         <h1>Products</h1>
     </section>
 
-    <!-- Sidemenu -->
-    <nav id="side-menu" class="side-menu">
-        <!-- <button class="close-btn" onclick="toggleMenu()"><i class="fa-regular fa-circle-xmark"></i></button> -->
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="distribute.html">Distribute</a>
-        <a href="#">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="#">About</a>
-    </nav>
+    <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
       
     <div id="overlay" onclick="toggleMenu()"></div>
 

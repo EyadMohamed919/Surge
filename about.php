@@ -15,6 +15,8 @@
         <h1>About</h1>
     </section>
 
+    <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
+
     <div class="page-wrapper">
         
         <div class="story-container">

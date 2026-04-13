@@ -70,7 +70,7 @@ class NewsView{
 
                 </div>
                 <h4>' . $title . '</h4>
-                <p>' . $description . '</p>
+                <p id="description">' . $description . '</p>
 
                 <div class="news-quick">
                     <a href="article.php?id=' . $article->getID() . '"><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>

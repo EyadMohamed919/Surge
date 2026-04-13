@@ -12,26 +12,7 @@
 </head>
 <body>
     <section class="sub-page-header">
-        <nav class="main-nav glass-panel">
-            <div class="links-container">
-                <a href="index.html" class="nav-link ">Home</a>
-                <a href="products.html" class="nav-link">Products</a>
-                <a href="news.html" class="nav-link">News</a>
-            </div>
-
-            <img src="public/image/Surge Main Logo.svg" alt="">
-
-            <div>
-                <a href="distribute.html" class="nav-link">Distribute</a>
-                <a href="about.html" class="nav-link">About</a>
-                <a href="contact.html" class="nav-link active">Contact</a>
-            </div>
-
-            <button class="burger-menu" onclick="toggleMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav>
-
+        <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
         <h1>News</h1>
     </section>
 
