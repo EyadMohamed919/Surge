@@ -1,3 +1,10 @@
+<?php
+/**
+ * Page: About Us
+ * Brand: Legacy Group for Trade LLC
+ * Project: SURGE Egypt Official Agency
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +14,14 @@
     <link rel="stylesheet" href="public/css/components.css">
     <link rel="stylesheet" href="public/css/base.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE Egypt</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>
 </head>
 <body>
 
     <section class="sub-page-header">
         <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
-        <h1>About</h1>
+        <h1>About Us</h1>
     </section>
 
     <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
@@ -24,16 +32,13 @@
         
         <div class="story-container">
             <div class="text-column">
-                <span class="section-label">Since 2017</span>
-                <h2 class="main-heading">Our Journey</h2>
+                <span class="section-label">Established 2026</span>
+                <h2 class="main-heading">A New Era of Trade</h2>
                 <p>
-                    Born from a vision in 2017 and launched in 2023, SURGE is the pride of Dubai. 
-                    We spent years perfecting a formula that combines high performance with the highest 
-                    standards of quality.
+                    Founded in 2026, <strong>Legacy Group for Trade LLC</strong> was born from a commitment to excellence and a vision to bring the world’s most innovative products to the Egyptian market. We specialize in identifying premium brands that align with our core values of quality, integrity, and performance.
                 </p>
                 <p>
-                    With over 18,600 tests conducted, we ensured that every can delivers a clean, 
-                    refreshing boost without the jitteriness found in conventional drinks.
+                    As the official agency and primary trader of <strong>SURGE</strong> in Egypt, we represent a legacy of precision. Our operations are built on the same high standards that led to the creation of SURGE, ensuring every product we distribute meets the rigorous expectations of our clients.
                 </p>
             </div>
             <div class="image-column">
@@ -41,36 +46,25 @@
             </div>
         </div>
 
-        <h2 class="main-heading" style="text-align: center;">Why Choose <span class="red-text">SURGE</span>?</h2>
+        <h2 class="main-heading" style="text-align: center;">Why Partner with <span class="red-text">Legacy Group</span>?</h2>
         
         <div class="feature-grid">
             <div class="feature-card">
-                <h3 class="feature-title">Premium Blend</h3>
-                <p>Formulated with taurine, caffeine, and 100% natural vitamins (B2, B3, B5, B6, B12, and C) sourced from real fruits.</p>
+                <h3 class="feature-title">Strategic Distribution</h3>
+                <p>We leverage a sophisticated logistics network to ensure our portfolio of products reaches every corner of the region with efficiency and care.</p>
             </div>
             <div class="feature-card">
-                <h3 class="feature-title">No Aftertaste</h3>
-                <p>A meticulously crafted formula that provides an instant natural boost with zero artificial ingredients and no aftertaste.</p>
+                <h3 class="feature-title">Official Agency</h3>
+                <p>As an authorized representative, we provide a direct link between global manufacturers and the Egyptian market, guaranteeing 100% authenticity.</p>
             </div>
             <div class="feature-card">
-                <h3 class="feature-title">Health First</h3>
-                <p>Designed to support mental focus and physical strength without increasing heart rate or causing cardiovascular strain.</p>
+                <h3 class="feature-title">Expanding Portfolio</h3>
+                <p>Beyond our flagship energy line, we are dedicated to sourcing diverse products that empower the modern lifestyle and drive market growth.</p>
             </div>
         </div>
 
     </div>
 
-    
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link ">Home</a>
-            <a href="products.html" class="nav-link active">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.html" class="nav-link">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 </body>
 </html>

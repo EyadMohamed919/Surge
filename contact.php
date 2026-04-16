@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="public/css/contact.css">
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE | Distribute</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>
 </head>
 <body>
     <section class="sub-page-header">
@@ -90,17 +91,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.259835964993!2d31.002639537231314!3d30.02068034229321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14585b0525c31285%3A0xe916bcf3ee2db2ad!2sArkan%20Plaza!5e0!3m2!1sen!2seg!4v1775396216879!5m2!1sen!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.html" class="nav-link">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link active">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
     <script src="public/scripts/sidemenu.js"></script>
 </body>

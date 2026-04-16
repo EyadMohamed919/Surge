@@ -11,7 +11,8 @@ $article = $NewsModel->getNewsById($_GET["id"]);
     <link rel="stylesheet" href="public/css/article.css">
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE | News</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>>
 </head>
 <body>
     <section class="sub-page-header">
@@ -29,21 +30,11 @@ $article = $NewsModel->getNewsById($_GET["id"]);
         <h3><?php echo $article->getTitle(); ?></h3>
         <p><?php echo $article->getDescription(); ?></p>
 
-            <a href="index.php" class="quick-button black-button bright-red-hover">Return to Homepage</a>
+            <a href="news.php" class="quick-button black-button bright-red-hover">Return to News</a>
     </section>
 
     
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link ">Home</a>
-            <a href="products.html" class="nav-link active">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.html" class="nav-link">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 </body>
 </html>

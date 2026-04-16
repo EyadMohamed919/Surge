@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 
-    <title>SURGE | Products</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>
 </head>
 <body>
     <section class="sub-page-header">
@@ -18,6 +19,11 @@
     <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
       
     <div id="overlay" onclick="toggleMenu()"></div>
+
+    <section class="partner-section">
+        <h2>Our Official Partners</h2>
+        <div></div>
+    </section>
 
     <section class="info-section">
         <h2>What's inside a SURGE can?</h2>
@@ -177,17 +183,7 @@
         </div>
     </section>
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link ">Home</a>
-            <a href="products.html" class="nav-link active">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.php" class="nav-link">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
     <script src="public/scripts/video.js"></script>
     <script src="public/scripts/sidemenu.js"></script>

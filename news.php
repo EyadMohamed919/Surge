@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . "/src/view/NewsView.php"; ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,103 +17,21 @@
         <h1>News</h1>
     </section>
 
-    <!-- Sidemenu -->
-    <nav id="side-menu" class="side-menu">
-        <!-- <button class="close-btn" onclick="toggleMenu()"><i class="fa-regular fa-circle-xmark"></i></button> -->
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="distribute.html">Distribute</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-    </nav>
+    <?php require_once __DIR__ . "/src/view/MobileNavBarView.php"; ?>
+      
+    <div id="overlay" onclick="toggleMenu()"></div>
 
     <section class="news-section">
         <h2 class="news-title">News & Activites</h2>
         <p>Check out the latest events and activites</p>
         <div class="scrollable-container">
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
-
-                </div>
-                <div class="news-info">
-                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
-                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
-                        expansion into the Egyptian market, bringing its premium line 
-                        of energy beverages to the heart of North Africa. As a brand 
-                        dedicated to redefining energy by fueling both the body and mind, 
-                        SURGE is introducing..</p>
-                </div>
-
-                <div class="news-quick">
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
-
-                </div>
-                <div class="news-info">
-                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
-                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
-                        expansion into the Egyptian market, bringing its premium line 
-                        of energy beverages to the heart of North Africa. As a brand 
-                        dedicated to redefining energy by fueling both the body and mind, 
-                        SURGE is introducing..</p>
-                </div>
-
-                <div class="news-quick">
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                </div>
-            </div>
-
-            <div class="news-card">
-                <div class="news-image" style="background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2022/11/25125733/GYM-INTERIORS-FEATURE-compressed.jpg');">
-
-                </div>
-                <div class="news-info">
-                    <h4 class="title">SURGE Energy Expands to Egypt: Redefining Vitality in Cairo</h4>
-                    <p class="description">SURGE L.L.C has officially announced its highly anticipated 
-                        expansion into the Egyptian market, bringing its premium line 
-                        of energy beverages to the heart of North Africa. As a brand 
-                        dedicated to redefining energy by fueling both the body and mind, 
-                        SURGE is introducing..</p>
-                </div>
-
-                <div class="news-quick">
-                    <p>
-                        <i class="fa-solid fa-calendar-days"></i>
-                        12-10-2025
-                    </p>
-                    <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
-                </div>
-            </div>
+            <?php NewsView::fetchNewsRecycler(); ?>
         </div>
 
     </section>
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="news.html" class="nav-link active">News</a>
-            <a href="distribute.html" class="nav-link ">Distribute</a>
-            <a href="about" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link ">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
-    <script src="public/scripts/news.js"></script>
     <script src="public/scripts/video.js"></script>
     <script src="public/scripts/sidemenu.js"></script>
 </body>

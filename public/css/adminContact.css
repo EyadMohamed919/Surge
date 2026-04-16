@@ -22,14 +22,14 @@ nav.sidebar {
 }
 
 .sidebar-brand {
-    background-image: url("../image/Surge\ Main\ Logo.svg");
+    background-image: url("../image/LegacyTradeWhiteLogo.svg");
     width: 70%;
     background-position: center;
     background-size: cover;
     height: auto;
     margin: auto;
     margin-bottom: 30px;
-    aspect-ratio: 1.8/0.5;
+    aspect-ratio: 1.8/0.42;
 }
 
 .sidebar-brand { padding: 0 1.5rem 2rem; font-size: 1.5rem; font-weight: 800; color: var(--primary-red); letter-spacing: 2px; text-align: center; }

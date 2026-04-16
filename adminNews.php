@@ -15,7 +15,8 @@ require_once __DIR__ . "/src/view/NewsView.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SURGE Admin | News Manager</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+  <title>Legacy Trade</title>
     <link rel="stylesheet" href="public/css/adminNews.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 </head>
@@ -26,7 +27,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
         <div class="header-flex">
             <div>
                 <h1>News Management</h1>
-                <p style="color: var(--text-gray);">Compose and archive SURGE news updates</p>
+                <p style="color: var(--text-gray);">Compose and archive Legacy Trade news updates</p>
             </div>
             <i class="fa-solid fa-circle-user fa-2xl" style="color: var(--primary-red);"></i>
         </div>

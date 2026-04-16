@@ -12,7 +12,8 @@ require_once __DIR__ . "/src/view/NewsView.php";
     <link rel="stylesheet" href="public/css/components.css">
     <link rel="stylesheet" href="public/css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SURGE</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>
 </head>
 <body>
     <script src="public/scripts/video.js"></script>
@@ -44,7 +45,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
     </header>
 
     <section class="product-section">
-        <h2 class="product-title">Our Drinks</h2>
+        <h2 class="product-title">SURGE's Drinks</h2>
         <div class="horizontal-container mt-100 m-auto">
 
             <div class="product-card">
@@ -91,7 +92,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
     </section>
 
     <section class="about-section">
-        <h2 class="about-title">Our Story</h2>
+        <h2 class="about-title">What is SURGE?</h2>
 
         <div class="red-line"></div>
         <div class="horizontal-container m-auto mt-50">
@@ -132,17 +133,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
         </div>
     </section>
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link active">Home</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.html" class="nav-link">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
 </body>
 </html>

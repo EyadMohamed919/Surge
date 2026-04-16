@@ -21,7 +21,8 @@ require_once __DIR__ . "/src/view/DistributeView.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/dashboard.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE Admin | Dashboard</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade | Dashboard</title>
 </head>
 <body>
 
@@ -31,7 +32,7 @@ require_once __DIR__ . "/src/view/DistributeView.php";
         <header class="top-bar">
             <div class="welcome-msg">
                 <h1>Welcome, <?php echo $FName; ?></h1>
-                <p>Manage your SURGE ecosystem and news updates.</p>
+                <p>Manage your Legacy Trade ecosystem and news updates.</p>
             </div>
             <div class="user-profile">
                 <i class="fa-solid fa-circle-user fa-2xl" style="color: var(--primary-red);"></i>

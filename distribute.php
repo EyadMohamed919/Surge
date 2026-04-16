@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="public/css/distribute.css">
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE | Distribute</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Trade</title>
 </head>
 <body>
     <section class="sub-page-header">
@@ -75,19 +76,8 @@
         </div>
     </section>
 
-    <footer>
-        <img src="public/image/Surge Main Logo.svg" alt="">
-        <div>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="products.html" class="nav-link">Products</a>
-            <a href="news.html" class="nav-link">News</a>
-            <a href="distribute.html" class="nav-link active">Distribute</a>
-            <a href="about.html" class="nav-link">About</a>
-            <a href="contact.html" class="nav-link ">Contact</a>
-        </div>
-    </footer>
+    <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
-    <script src="public/scripts/video.js"></script>
     <script src="public/scripts/sidemenu.js"></script>
 </body>
 </html>

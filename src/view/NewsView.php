@@ -113,5 +113,53 @@ class NewsView{
             ';
         }
     }
+
+    public static function fetchNewsRecycler()
+    {
+        $newsModel = new NewsModel();
+        $news = $newsModel->getAllNews();
+
+        foreach ($news as $news => $article) {
+            if(strlen($article->getDescription()) > 250)
+            {
+                $description = substr($article->getDescription(), 0, 247) . "...";
+            }
+            else
+            {
+                $description = $article->getDescription();
+            }
+
+            if(strlen($article->getTitle()) > 95)
+            {
+                $title = substr($article->getTitle(), 0, 92) . "...";
+            }
+            else
+            {
+                $title = $article->getTitle();
+            }
+
+            echo '
+         
+            <div class="news-card">
+            <div class="news-image" style="background-image: url(public/uploads/news/' . $article->getImage() . ');">
+
+            </div>
+            <div class="news-info">
+                <h4 class="title">' . $title . '</h4>
+                <p class="description">' . $description . '</p>
+            </div>
+
+            <div class="news-quick">
+                <p>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    ' . $article->getDate() . '
+                </p>
+                <a href="article.php?id=' . $article->getID() . '"><i class="fa-solid fa-arrow-up-right-from-square"></i> More Details</a>
+            </div>
+            </div>
+            
+            ';
+        }
+    }
 }
 ?>

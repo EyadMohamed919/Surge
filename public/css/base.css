@@ -34,6 +34,16 @@ footer img{
     margin-right: 100px;
 }
 
+#eydos{
+    width: 13%;
+    margin: auto;
+    margin-right: 50px;
+}
+
+#eydos1{
+    display: none;
+}
+
 footer div{
     width: 40%;
     display: flex;
@@ -131,6 +141,17 @@ footer div{
         width: 60%;
         margin: auto;
         margin-bottom: 20px;
+    }
+
+    #eydos{
+        display: none;
+    }
+
+    #eydos1{
+        display: flex;
+        width: 40%;
+        margin: auto;
+        margin-top: 50px;
     }
     
     footer div{
