@@ -18,11 +18,12 @@ require_once __DIR__ . "/src/view/DistributeView.php";
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="public/css/adminCommon.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/dashboard.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade | Dashboard</title>
+    <title>Legacy Group | Dashboard</title>
 </head>
 <body>
 
@@ -68,41 +69,45 @@ require_once __DIR__ . "/src/view/DistributeView.php";
                 <h2>Recent News</h2>
                 <a href="adminNews.php" class="btn-new"><i class="fa-solid fa-plus"></i> Add Article</a>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Article Title</th>
-                        <th>Date Published</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                
-                    <?php NewsView::fetchTwoNewsTable(); ?>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Article Title</th>
+                            <th>Date Published</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    
+                        <?php NewsView::fetchTwoNewsTable(); ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="data-section">
             <div class="section-header">
                 <h2>Distribution Requests</h2>
             </div>
-            <table>
-            <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Contact Person</th>
-                        <th>Contact Details</th>
-                        <th>Request Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    DistributeView::fetchTwoDistributeTable();
-                    ?>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact Person</th>
+                            <th>Contact Details</th>
+                            <th>Request Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        DistributeView::fetchTwoDistributeTable();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 

@@ -15,75 +15,25 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html{
+    width: 100%;
+}
+
 body {
     background-color: var(--bg-black);
     color: white;
-    display: flex;
+    width: 100%;
 }
 
-/* Sidebar Navigation */
-nav.sidebar {
-    width: var(--sidebar-width);
-    height: 100vh;
-    background: #000;
-    border-right: 1px solid rgba(220, 20, 60, 0.2);
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem 0;
-}
 
-.sidebar-brand {
-    background-image: url("../image/LegacyTradeWhiteLogo.svg");
-    width: 70%;
-    background-position: center;
-    background-size: cover;
-    height: auto;
-    margin: auto;
-    margin-bottom: 30px;
-    aspect-ratio: 1.8/0.42;
-}
-
-.nav-links {
-    list-style: none;
-    flex-grow: 1;
-}
-
-.nav-links li {
-    padding: 0.5rem 1rem;
-}
-
-.nav-links a {
-    color: var(--text-gray);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0.8rem 1rem;
-    border-radius: 12px;
-    transition: all 0.3s;
-}
-
-.nav-links a:hover, .nav-links a.active {
-    background: rgba(220, 20, 60, 0.1);
-    color: white;
-}
-
-.nav-links a i {
-    width: 20px;
-    color: var(--primary-red);
-}
-
-.logout-area {
-    padding: 1rem;
-    border-top: 1px solid #222;
-}
 
 /* Main Content */
 main.content {
     margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
+    width: auto; /* Let it fill the remaining space naturally */
+    min-height: 100vh;
     padding: 2rem;
+    transition: margin-left 0.3s ease;
 }
 
 header.top-bar {
@@ -136,6 +86,7 @@ header.top-bar {
     border: 1px solid #222;
     padding: 1.5rem;
     margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 .section-header {
@@ -154,11 +105,15 @@ header.top-bar {
     cursor: pointer;
     font-weight: 600;
 }
-
+.table-container{
+    overflow-x: auto; /* Adds a local scrollbar to the table ONLY */
+    -webkit-overflow-scrolling: touch;
+}
 table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
+    
 }
 
 th {
@@ -191,8 +146,28 @@ td {
 
 .actions i:hover { color: var(--primary-red); }
 
-@media (max-width: 768px) {
-    nav.sidebar { width: 70px; }
-    .sidebar-brand, .nav-links span, .welcome-msg p { display: none; }
-    main.content { margin-left: 70px; width: calc(100% - 70px); }
+@media screen and (max-width: 600px) {
+    main.content {
+        width: 100%;
+        margin-left: 0 !important;
+        padding-top: 20px; /* Space for the hamburger */
+        overflow-x: hidden; 
+    }
+
+    body{
+
+    }
+
+    /* .data-section {
+        width: 100%;
+    }
+
+    table{
+        width: 100%;
+        overflow-x: scroll;
+    } */
+
+    header.top-bar {
+        width: 100%;
+    }
 }

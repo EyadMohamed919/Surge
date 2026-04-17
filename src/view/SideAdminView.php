@@ -9,6 +9,11 @@ $pagesArray = [
 ];
 
 echo '<nav class="sidebar">
+<input type="checkbox" id="nav-toggle" style="display: none;">
+<label for="nav-toggle" class="hamburger">
+    <i class="fa-solid fa-bars"></i>
+</label>
+
 <div class="sidebar-brand"></div>
 <ul class="nav-links">';
 foreach ($pagesArray as $page => $value) {

@@ -1,0 +1,108 @@
+/* Sidebar Navigation */
+nav.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: #000;
+    border-right: 1px solid rgba(220, 20, 60, 0.2);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0;
+}
+
+.sidebar-brand {
+    background-image: url("../image/LegacyTradeWhiteLogo.svg");
+    width: 70%;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    margin: auto;
+    margin-bottom: 30px;
+    aspect-ratio: 1.8/0.39;
+}
+
+.nav-links {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    padding: 0.5rem 1rem;
+}
+
+.nav-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background: rgba(220, 20, 60, 0.1);
+    color: white;
+}
+
+.nav-links a i {
+    width: 20px;
+    color: var(--primary-red);
+}
+
+.logout-area {
+    padding: 1rem;
+    border-top: 1px solid #222;
+}
+
+/* 1. The Hamburger Button (Hidden on Desktop) */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    background: #000;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* 2. Mobile Media Query */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    nav.sidebar {
+        left: -100%; /* Hide sidebar off-screen */
+        z-index: 1000;
+        transition: 0.3s ease;
+        width: 250px;
+    }
+
+    /* 3. The Magic: If checkbox is checked, slide sidebar in */
+    #nav-toggle:checked ~ .nav-links,
+    #nav-toggle:checked ~ .sidebar-brand,
+    #nav-toggle:checked ~ .logout-area {
+        display: block;
+    }
+    
+    #nav-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+
+    /* Target the sidebar itself when checked */
+    nav.sidebar:has(#nav-toggle:checked) {
+        left: 0;
+    }
+    
+    /* Adjust main content so it doesn't hide behind sidebar on mobile */
+    main.content {
+        margin-left: 0 !important;
+        padding-top: 70px; /* Space for the hamburger */
+    }
+}
