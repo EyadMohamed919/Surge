@@ -8,17 +8,7 @@ if(!isset($_SESSION['isLoggedIn']))
 }
 $FName = $_SESSION["userFName"];
 
-require_once __DIR__ . "/src/model/NewsModel.php";
-$newModel = new NewsModel();
-if(isset($_GET["edit"]))
-{
-    $news = $newModel->getNewsById($_GET["edit"]);
-    if(!$news)
-    {
-        header("location: adminNews.php");
-    }
-
-}
+require_once __DIR__ . "/src/view/UserView.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +27,8 @@ if(isset($_GET["edit"]))
     <main class="content">
         <div class="header-flex">
             <div>
-                <h1>News Management</h1>
-                <p style="color: var(--text-gray);">Edit existing news</p>
+                <h1>User Management</h1>
+                <p style="color: var(--text-gray);">Add new user</p>
             </div>
             <i class="fa-solid fa-circle-user fa-2xl" style="color: var(--primary-red);"></i>
         </div>
@@ -46,31 +36,51 @@ if(isset($_GET["edit"]))
         <div class="form-card">
             <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-nib"></i> Edit Article</h2>
             
-            <form action="src/router/NewsRouter.php" method="POST" enctype="multipart/form-data">
+            <form action="src/router/UserRouter.php" method="POST" enctype="multipart/form-data">
                 <div class="form-grid"> 
                     <div class="form-group">
-                        <label for="title">Article Title</label>
-                        <input value="<?php echo $news->getTitle(); ?>" type="text" id="title" name="title" placeholder="e.g. New Distribution Center Opening" required>
+                        <label for="title">First Name</label>
+                        <input  type="text" id="title" name="fname" placeholder="e.g. New Distribution Center Opening" required>
                     </div>
                     <div class="form-group">
-                        <label for="date">Publish Date</label>
-                        <input value="<?php echo $news->getDate(); ?>" type="date" id="date" name="date" required>
+                        <label for="date">Last Name</label>
+                        <input  type="text" id="date" name="lname" required>
                     </div>
                     <div class="form-group full-width">
-                        <label for="image">Featured Picture</label>
-                        <input type="file" id="image" name="image" accept="image/*">
+                        <label for="image">Email</label>
+                        <input  type="email" name="email" required>
                     </div>
                     <div class="form-group full-width">
-                        <label for="description">Short Description</label>
-                        <textarea id="description" name="description" rows="5" placeholder="Write the article content here..." required><?php echo htmlspecialchars($news->getDescription()); ?></textarea>
+                        <label for="description">Password</label>
+                        <input  type="password" name="password" required>
                     </div>
                 </div>
 
-                <input type="text" name="id" value="<?php echo $news->getID(); ?>" hidden>
-                <button type="submit" name="editNews" class="publish-btn">
+                <button type="submit" name="addUser" class="publish-btn">
                     <i class="fa-solid fa-paper-plane"></i> Update Article
                 </button>
             </form>
+
+            
+        </div>
+
+        <div class="history-section">
+            <div class="section-title">Published Articles History</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        UserView::fetchAllUsers();
+                        ?>                    
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </main>

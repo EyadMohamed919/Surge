@@ -6,5 +6,9 @@ if(isset($_POST))
     {
         UserController::login($_POST["email"], $_POST["password"]);
     }
+    else if(isset($_POST["addUser"]))
+    {
+        UserController::register($_POST["fname"], $_POST["lname"], $_POST["email"], $_POST["password"]);
+    }
 }
 ?>

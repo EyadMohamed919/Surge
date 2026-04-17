@@ -20,8 +20,24 @@ class UserController{
             header("Location: ../../dashboard.php");
             exit();
         } else {
-            header("Location: login.php?error=invalid_credentials");
+            header("Location: ../../login.php?error=invalid_credentials");
             exit();
+        }
+    }
+
+    public static function register($fname, $lname, $email, $password)
+    {
+        $userModel = new UserModel();
+
+        $user = $userModel->getUserByEmailOnly($email, $password);
+        if(!$user)
+        {
+            $userModel->createUser($fname, $lname, $email, $password);
+            header("Location: ../../settings.php");
+        }
+        else
+        {
+            header("Location: ../../settings.php");
         }
     }
 }

@@ -32,10 +32,10 @@ class UserModel
         return $this;
     }
 
-    public function getAllUsers()
+    public static function getAllUsers()
     {
         $userArray = array();
-        $stmt = $this->conn->prepare("SELECT * FROM user");
+        $stmt = getConnection()->prepare("SELECT * FROM user");
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -97,6 +97,29 @@ class UserModel
                 );
                 return $this;
             }
+        }
+
+        return 0;
+    }
+
+    public function getUserByEmailOnly($email)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM user WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $this->createUserObject(
+                $row["id"], 
+                $row["fname"], 
+                $row["lname"], 
+                $row["email"], 
+                $row["password"]
+            );
+            return $this;
         }
 
         return 0;
