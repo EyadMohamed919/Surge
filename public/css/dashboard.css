@@ -28,13 +28,7 @@ body {
 
 
 /* Main Content */
-main.content {
-    margin-left: var(--sidebar-width);
-    width: auto; /* Let it fill the remaining space naturally */
-    min-height: 100vh;
-    padding: 2rem;
-    transition: margin-left 0.3s ease;
-}
+
 
 header.top-bar {
     display: flex;
@@ -105,10 +99,7 @@ header.top-bar {
     cursor: pointer;
     font-weight: 600;
 }
-.table-container{
-    overflow-x: auto; /* Adds a local scrollbar to the table ONLY */
-    -webkit-overflow-scrolling: touch;
-}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -147,12 +138,7 @@ td {
 .actions i:hover { color: var(--primary-red); }
 
 @media screen and (max-width: 600px) {
-    main.content {
-        width: 100%;
-        margin-left: 0 !important;
-        padding-top: 20px; /* Space for the hamburger */
-        overflow-x: hidden; 
-    }
+    
 
     body{
 

@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="public/css/news.css">
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <title>SURGE | News</title>
+    <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
+    <title>Legacy Group</title>
 </head>
 <body>
     <section class="sub-page-header">

@@ -53,11 +53,7 @@ nav.sidebar {
 }
 
 /* Main Content */
-main.content {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    padding: 2rem;
-}
+
 
 .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 

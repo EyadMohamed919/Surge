@@ -26,8 +26,9 @@ if(isset($_GET["edit"]))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
     <link rel="stylesheet" href="public/css/adminNews.css">
+    <link rel="stylesheet" href="public/css/adminCommon.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 </head>
 <body>

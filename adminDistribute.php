@@ -17,8 +17,9 @@ require_once __DIR__ . "/src/view/DistributeView.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="public/css/adminDistribute.css">
+    <link rel="stylesheet" href="public/css/adminCommon.css">
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
 </head>
 <body>
 
@@ -43,23 +44,25 @@ require_once __DIR__ . "/src/view/DistributeView.php";
                     <button class="action-btn"><i class="fa-solid fa-download"></i> Export CSV</button>
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Company</th>
-                        <th>Contact Person</th>
-                        <th>Contact Details</th>
-                        <th>Message</th>
-                        <th>Request Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    DistributeView::fetchDistributeTable();
-                    ?>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact Person</th>
+                            <th>Contact Details</th>
+                            <th>Message</th>
+                            <th>Request Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        DistributeView::fetchDistributeTable();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 

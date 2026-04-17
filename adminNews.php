@@ -16,8 +16,9 @@ require_once __DIR__ . "/src/view/NewsView.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-  <title>Legacy Trade</title>
+  <title>Legacy Group</title>
     <link rel="stylesheet" href="public/css/adminNews.css">
+    <link rel="stylesheet" href="public/css/adminCommon.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -62,22 +63,24 @@ require_once __DIR__ . "/src/view/NewsView.php";
 
         <div class="history-section">
             <div class="section-title">Published Articles History</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Date</th>
-                        <th>Preview</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php 
-                    NewsView::fetchNewsTable();
-                    ?>                    
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Preview</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                        NewsView::fetchNewsTable();
+                        ?>                    
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
 

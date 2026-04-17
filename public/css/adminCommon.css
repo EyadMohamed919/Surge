@@ -71,8 +71,28 @@ nav.sidebar {
     z-index: 1001;
 }
 
+main.content {
+    margin-left: var(--sidebar-width);
+    width: auto; /* Let it fill the remaining space naturally */
+    min-height: 100vh;
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+}
+
+.table-container{
+    overflow-x: auto; /* Adds a local scrollbar to the table ONLY */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+
 /* 2. Mobile Media Query */
 @media (max-width: 768px) {
+    main.content {
+        width: 100%;
+        margin-left: 0 !important;
+        padding-top: 20px; /* Space for the hamburger */
+        overflow-x: hidden; 
+    }
     .hamburger {
         display: block; /* Show hamburger on mobile */
     }
