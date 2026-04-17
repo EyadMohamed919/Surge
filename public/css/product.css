@@ -240,6 +240,11 @@ padding-top: 10px;
     display: flex;
 }
 
+.partner-section h2{
+    margin: auto;
+    text-align: center;
+}
+
 .partner-section div{
     width: 15%;
     height: auto;
@@ -287,5 +292,15 @@ padding-top: 10px;
     .product-details p{
         width: 100%;
         white-space: normal;
+    }
+
+    .partner-section h2{
+        margin: auto;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    
+    .partner-section div{
+        width: 60%;
     }
 }

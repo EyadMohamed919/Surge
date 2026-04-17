@@ -6,7 +6,7 @@
   <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-  <title>Legacy Trade</title>
+  <title>Legacy Group</title>
 </head>
 <body>
 
@@ -26,7 +26,7 @@
       <i class="fa-solid fa-user"></i>
         EMAIL OR USERNAME
       </label>
-      <input type="text" name="email" class="input-field" placeholder="example@legacytrade.com" autocomplete="username">
+      <input type="text" name="email" class="input-field" placeholder="example@legacygroup.com" autocomplete="username">
     </div>
 
     <div class="form-group">

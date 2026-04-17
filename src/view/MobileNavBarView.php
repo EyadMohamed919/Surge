@@ -5,7 +5,8 @@ $pagesArray = [
     "news.php"=>"News",
     "distribute.php"=>"Distribute",
     "about.php"=>"About",
-    "contact.php"=>"Contact"
+    "contact.php"=>"Contact",
+    "login.php"=>"Login"
 ];
 
 $pageName = basename($_SERVER['PHP_SELF']);
