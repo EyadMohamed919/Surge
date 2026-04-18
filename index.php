@@ -39,8 +39,8 @@ require_once __DIR__ . "/src/view/NewsView.php";
         <div class="header-slogan-2"></div>
 
         <div class="quick-links">
-            <a href="disribute.php" class="quick-button glass-panel red-hover">Distribute with Us</a>
-            <a href="products.html" class="quick-button glass-panel red-hover">View Products</a>
+            <a href="distribute.php" class="quick-button glass-panel red-hover">Distribute with Us</a>
+            <a href="products.php" class="quick-button glass-panel red-hover">View Products</a>
         </div>
     </header>
 
@@ -87,7 +87,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
         </div>
 
         <div class="quick-links">
-            <a href="products.html" class="quick-button black-button bright-red-hover">View Details</a>
+            <a href="products.php" class="quick-button black-button bright-red-hover">View Details</a>
         </div>
     </section>
 
@@ -116,7 +116,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
         </div>
 
         <div class="quick-links">
-            <a href="about.html" class="quick-button white-button m-auto black-hover">View Details</a>
+            <a href="about.php" class="quick-button white-button m-auto black-hover">View Details</a>
         </div>
     </section>
 
