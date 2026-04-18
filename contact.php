@@ -68,7 +68,7 @@
                         <p><i class="fa-solid fa-location-dot"></i> Sheikh Zayed, Giza</p>
                     </div>
 
-                    <p><i class="fa-solid fa-at"></i> surgeenergy@gmail.com</p>
+                    <p><i class="fa-solid fa-at"></i> info@legacygroup-egypt.com</p>
                 </div>
 
 
