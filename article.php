@@ -12,11 +12,11 @@ $article = $NewsModel->getNewsById($_GET["id"]);
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
 </head>
 <body>
+    <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
     <section class="sub-page-header">
-        <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
         <h1>News</h1>
     </section>
 

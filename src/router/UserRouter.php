@@ -21,6 +21,10 @@ if(isset($_POST))
         session_destroy();
         header("location: ../../login.php");
     }
+    else if(isset($_GET["delete"]))
+    {
+        UserController::deleteUser($_GET["delete"]);
+    }
 }
 else if(isset($_GET))
 {
@@ -34,6 +38,10 @@ else if(isset($_GET))
 
         session_destroy();
         header("location: ../../login.php");
+    }
+    else if(isset($_GET["delete"]))
+    {
+        UserController::deleteUser($_GET["delete"]);
     }
 }
 ?>

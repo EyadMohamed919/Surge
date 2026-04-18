@@ -11,8 +11,8 @@
     <title>Legacy Group</title>
 </head>
 <body>
+    <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
     <section class="sub-page-header">
-        <?php require_once __DIR__ . "/src/view/NavBarView.php"; ?>
         <h1>Products</h1>
     </section>
 

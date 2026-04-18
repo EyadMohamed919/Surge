@@ -35,7 +35,7 @@ if(isset($_SESSION['isLoggedIn']))
       <i class="fa-solid fa-user"></i>
         EMAIL OR USERNAME
       </label>
-      <input type="text" name="email" class="input-field" placeholder="example@legacygroup.com" autocomplete="username">
+      <input type="text" name="email" class="input-field" placeholder="example@legacygroup-egypt.com" value="example@legacygroup-egypt.com" autocomplete="email">
     </div>
 
     <div class="form-group">
@@ -51,6 +51,7 @@ if(isset($_SESSION['isLoggedIn']))
         <i class="fa-solid fa-arrow-right-to-bracket"></i>
       LOGIN TO DASHBOARD
     </button>
+    <a href="index.php">homepage</a>
 
   </form>
 </div>

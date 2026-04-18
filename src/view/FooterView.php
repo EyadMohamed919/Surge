@@ -23,7 +23,12 @@ $pageName = basename($_SERVER['PHP_SELF']);
         <a href="<?php echo array_keys($pagesArray)[4]; ?>" class="nav-link <?php echo ($pageName == array_keys($pagesArray)[4]) ? "active" : "" ?>"><?php echo array_values($pagesArray)[4]; ?></a>
         <a href="<?php echo array_keys($pagesArray)[5]; ?>" class="nav-link <?php echo ($pageName == array_keys($pagesArray)[5]) ? "active" : "" ?>"><?php echo array_values($pagesArray)[5]; ?></a>
         <a href="<?php echo array_keys($pagesArray)[6]; ?>" class="nav-link <?php echo ($pageName == array_keys($pagesArray)[6]) ? "active" : "" ?>"><?php echo array_values($pagesArray)[6]; ?></a>
+        <a href=""><i class="fa-brands fa-facebook"></i></a>
+        <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
     </div>
     <img id="eydos" src="public/image/PowerByED1.svg" alt="">
     <img id="eydos1" src="public/image/PowerByED.svg" alt="">
+
 </footer>

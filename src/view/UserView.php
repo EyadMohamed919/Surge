@@ -10,6 +10,9 @@ class UserView{
             <tr>
             <td>' . $user->getUserFName() . ' ' . $user->getUserLName() . '</td>
             <td>'  . $user->getUserEmail() . '</td>
+            <td class="actions">
+                <a href="src/router/UserRouter.php?delete=' . $user->getUserID() . '"><i class="fa-solid fa-trash"></i></a>
+            </td>
             </tr>
             ';
         }

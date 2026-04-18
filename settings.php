@@ -72,6 +72,7 @@ require_once __DIR__ . "/src/view/UserView.php";
                         <tr>
                             <th>Full Name</th>
                             <th>Email</th>
+                            <th>Delete User</th>
                         </tr>
                     </thead>
                     <tbody>

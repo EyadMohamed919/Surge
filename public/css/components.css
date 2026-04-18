@@ -13,8 +13,8 @@
     margin: 20px auto;
     padding: 20px 30px;
     left: 50%;
-    top: 5%;
-    transform: translate(-50%, -50%);
+    top: 1%;
+    transform: translateX(-50%);
     z-index: 100;
 }
 

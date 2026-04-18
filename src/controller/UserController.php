@@ -40,5 +40,19 @@ class UserController{
             header("Location: ../../settings.php");
         }
     }
+
+    public static function deleteUser($id)
+    {
+        $userModel = new UserModel();
+        if($userModel->deleteUser($id))
+        {
+            header("Location: ../../settings.php");
+        }
+        else
+        {
+            header("Location: ../../settings.php?status=error");
+        }
+
+    }
 }
 ?>

@@ -132,5 +132,12 @@ class UserModel
         $stmt->bind_param("ssss", $fname, $lname, $email, $hashedPassword);
         return $stmt->execute();
     }
+
+    public function deleteUser($id)
+    {
+        $stmt = $this->conn->prepare("DELETE FROM user WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
 }
 ?>
