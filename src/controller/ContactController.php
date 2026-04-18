@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../model/ContactModel.php";
-require_once __DIR__ . "/../model/UserModel.php.php";
+require_once __DIR__ . "/../model/UserModel.php";
 require_once __DIR__ . "/../service/EmailService.php";
 class ContactController {
     public static function handleSubmission($fname, $email, $phone, $message) {
