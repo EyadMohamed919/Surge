@@ -1,17 +1,21 @@
 .glass-panel {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     background-color: var(--glass-bg);
     border: var(--glass-border);
     border-radius: 20px;
 }
 
 .main-nav {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     width: 60%;
     margin: 20px auto;
     padding: 20px 30px;
-    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 .main-nav img{
