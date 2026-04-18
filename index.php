@@ -129,7 +129,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
         </div>
 
         <div class="quick-links">
-            <a href="#" class="quick-button black-button bright-red-hover">More News</a>
+            <a href="news.php" class="quick-button black-button bright-red-hover">More News</a>
         </div>
     </section>
 
