@@ -18,9 +18,9 @@ class EmailService{
         <hr>
         <a href='https://legacygroup-egypt.com' 
             style='background-color: rgba(250, 11, 11); color: #ffffff; padding: 15px 25px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block;'>
-            For more information, visit admin page 
+            For more information, visit admin page  
         </a>
-        <img src='http://www.legacygroup-egypt.com/public/image/LegacyTradeWhiteLogo.svg' style='margin:auto; width:80%; margin-top:15px;'>
+        <img src='https://www.legacygroup-egypt.com/public/image/LegacyTradeWhiteLogo.svg' style='margin:auto; width:80%; margin-top:15px;'>
         </body>
         </html>
         ";
