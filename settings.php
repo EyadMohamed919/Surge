@@ -34,30 +34,30 @@ require_once __DIR__ . "/src/view/UserView.php";
         </div>
 
         <div class="form-card">
-            <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-nib"></i> Edit Article</h2>
+            <h2 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-pen-nib"></i> Add User</h2>
             
             <form action="src/router/UserRouter.php" method="POST" enctype="multipart/form-data">
                 <div class="form-grid"> 
                     <div class="form-group">
                         <label for="title">First Name</label>
-                        <input  type="text" id="title" name="fname" placeholder="e.g. New Distribution Center Opening" required>
+                        <input  type="text" id="title" name="fname" placeholder="First Name" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Last Name</label>
-                        <input  type="text" id="date" name="lname" required>
+                        <input  type="text" id="date" name="lname" placeholder="Last Name" required>
                     </div>
                     <div class="form-group full-width">
                         <label for="image">Email</label>
-                        <input  type="email" name="email" required>
+                        <input  type="email" name="email" placeholder="example@legacygroup.com" required>
                     </div>
                     <div class="form-group full-width">
                         <label for="description">Password</label>
-                        <input  type="password" name="password" required>
+                        <input  type="password" name="password" placeholder="*******" required>
                     </div>
                 </div>
 
                 <button type="submit" name="addUser" class="publish-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Update Article
+                    <i class="fa-solid fa-paper-plane"></i> Add User
                 </button>
             </form>
 
@@ -65,7 +65,7 @@ require_once __DIR__ . "/src/view/UserView.php";
         </div>
 
         <div class="history-section">
-            <div class="section-title">Published Articles History</div>
+            <div class="section-title">Current Admin Users</div>
             <div class="table-container">
                 <table>
                     <thead>
