@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../model/DistributeModel.php";
-
+require_once __DIR__ . "/../service/EmailService.php";
 class DistributeController
 {
     public static function submitApplication($fname, $lname, $email, $phone, $cname, $cwebsite, $message)
@@ -8,9 +8,11 @@ class DistributeController
         $leadModel = new DistributeModel();
 
         $success = $leadModel->createLead($fname, $lname, $email, $phone, $cname, $cwebsite, $message);
-
+        
         if ($success) {
+            EmailService::sendMail($email, $cname, $message);
             header("Location: ../../distribute.php?status=success");
+            
         } else {
             header("Location: ../../distribute.php?status=error");
         }
