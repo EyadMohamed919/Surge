@@ -45,6 +45,10 @@ h3 {
         width: 95%;
     }
 
+    .article-section div{
+        height: 200px;
+    }
+
     h3 {
         font-size: 1.8rem;
     }
