@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="url" name="cwebsite" placeholder="example.com" required>
+                    <input type="text" name="cwebsite" placeholder="example.com" required>
                     <label for="cwebsite">Company Website</label>
                 </div>
 
