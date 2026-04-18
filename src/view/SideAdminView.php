@@ -30,7 +30,7 @@ foreach ($pagesArray as $page => $value) {
 echo '
 </ul>
         <div class="logout-area">
-            <a href="logout.php" style="color: var(--text-gray); text-decoration: none; padding-left: 1rem;">
+            <a href="src/router/UserRouter.php?destroy=true" style="color: var(--text-gray); text-decoration: none; padding-left: 1rem;">
                 <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
             </a>
         </div>
