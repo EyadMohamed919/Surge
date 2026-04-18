@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../model/ContactModel.php";
-
+require_once __DIR__ . "/../model/UserModel.php.php";
+require_once __DIR__ . "/../service/EmailService.php";
 class ContactController {
     public static function handleSubmission($fname, $email, $phone, $message) {
         $model = new ContactModel();
@@ -8,6 +9,12 @@ class ContactController {
         $success = $model->createInquiry($fname, $email, $phone, $message);
 
         if ($success) {
+            $userModel = new UserModel();
+            $userArray = $userModel->getAllUsers();
+            foreach($userArray as $user)
+            {
+                EmailService::sendContactMail($user->getUserEmail(), $fname, $message);
+            }
             header("Location: ../../contact.php?status=success");
         } else {
             header("Location: ../../contact.php?status=failed");
