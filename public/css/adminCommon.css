@@ -73,7 +73,7 @@ nav.sidebar {
 
 main.content {
     margin-left: var(--sidebar-width);
-    width: auto; /* Let it fill the remaining space naturally */
+    width: 100%; /* Let it fill the remaining space naturally */
     min-height: 100vh;
     padding: 2rem;
     transition: margin-left 0.3s ease;

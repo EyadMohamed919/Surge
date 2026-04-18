@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
 
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
 </head>
 <body>
     <section class="sub-page-header">

@@ -13,7 +13,7 @@ require_once __DIR__ . "/src/view/NewsView.php";
     <link rel="stylesheet" href="public/css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
 </head>
 <body>
     <script src="public/scripts/video.js"></script>

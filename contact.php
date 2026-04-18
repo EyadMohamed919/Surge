@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>
+    <title>Legacy Group</title>
 </head>
 <body>
     <section class="sub-page-header">
@@ -94,5 +94,27 @@
     <?php require_once __DIR__ . "/src/view/FooterView.php"; ?>
 
     <script src="public/scripts/sidemenu.js"></script>
+
+    <?php 
+        if(isset($_GET["status"]))
+        {
+            if($_GET["status"] == "success")
+            {
+                echo "
+                <script>
+                    alert('Form Submitted successfully');
+                </script>
+                ";
+            }
+            else
+            {
+                echo "
+                <script>
+                    alert('Failed to Submit Form');
+                </script>
+                ";
+            }
+        }
+    ?>
 </body>
 </html>

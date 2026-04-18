@@ -8,7 +8,7 @@ class ContactController {
         $success = $model->createInquiry($fname, $email, $phone, $message);
 
         if ($success) {
-            header("Location: ../../contact.php?status=sent");
+            header("Location: ../../contact.php?status=success");
         } else {
             header("Location: ../../contact.php?status=failed");
         }
@@ -23,7 +23,7 @@ class ContactController {
         {
             if($model->deleteInquiry($id))
             {
-                header("Location: ../../adminContact.php?status=sent");
+                header("Location: ../../adminContact.php?status=success");
             }
             else
             {
