@@ -12,7 +12,7 @@ $article = $NewsModel->getNewsById($_GET["id"]);
     <link rel="stylesheet" href="public/css/components.css">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="public/image/favicon.svg" type="image/x-icon">
-    <title>Legacy Trade</title>>
+    <title>Legacy Trade</title>
 </head>
 <body>
     <section class="sub-page-header">

@@ -38,3 +38,18 @@ p {
 h3 {
     font-size: 2.7rem;
 }
+
+
+@media screen and (max-width: 600px) {
+    .article-section{
+        width: 95%;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+}
